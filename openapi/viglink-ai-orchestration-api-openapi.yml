@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: Bid Check Account Ai Orchestration API
+  version: 1.0.0
+  description: 'Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.
+
+
+    Partners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn''s bid, you can decide whether to route the click through Sovrn or through another network.
+
+
+    For CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn''s revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.
+
+
+    **Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe "Try It" panel will encode them automatically.
+
+    '
+  x-source: https://developer.sovrn.com/llms.txt (per-endpoint OpenAPI definitions, harvested 2026-07-21)
+servers:
+- url: https://api.viglink.com
+  description: Production
+tags:
+- name: Ai Orchestration
+paths:
+  /ai-orchestration/products:
+    post:
+      summary: Get Product Recommendations
+      operationId: get_product_recommendations
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Your Sovrn Commerce API key. Found in the Sovrn Platform under Site Settings or via the Campaigns API.
+      - name: market
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Market in the format currency_language (e.g., usd_en). Inferred from IP if not provided.
+      - name: cuid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Custom tracking ID for associating recommendations with a specific user, session, or page.
+      - name: priceRange
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Price filter using "min-max" format, e.g., "20-50" or "*-25".
+      - name: includeMerchants
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Comma separated list of merchant IDs to include. Only one of includeMerchants or excludeMerchants may be used.
+      - name: excludeMerchants
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Comma separated list of merchant IDs to exclude. Only one of includeMerchants or excludeMerchants may be used.
+      - name: numProducts
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 4
+        description: 'Number of products to return. Default: 4, Max: 50.'
+      - name: pageUrl
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The URL or key of the content you want recommendations for. See the 'Caching' section above for more information.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: Short descriptive title for the content (optional).
+                content:
+                  type: string
+                  description: The material you want to generate recommendations from. This can be full HTML from a page, plain text from an article, or even a short description of a product, user, or scenario.
+              required:
+              - content
+      responses:
+        '200':
+          description: A list of recommended products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    imageURL:
+                      type: string
+                    thumbnailURL:
+                      type: string
+                    currency:
+                      type: string
+                    salePrice:
+                      type: number
+                    retailPrice:
+                      type: number
+                    discountRate:
+                      type: number
+                    inStock:
+                      type: boolean
+                    affiliatable:
+                      type: boolean
+                    deepLink:
+                      type: string
+      tags:
+      - Ai Orchestration

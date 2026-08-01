@@ -1,0 +1,41 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Sovrn Commerce (VigLink) reports
+  version: 1.0.0
+extends: openapi/viglink-reports-openapi.yml
+x-provenance:
+  generated: '2026-07-21'
+  method: generated
+  source: openapi/viglink-reports-openapi.yml
+  note: Adds operationIds missing from the published per-endpoint OpenAPI fragments; never mutates the harvested spec.
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      provider: viglink
+      harvested: '2026-07-21'
+      source: https://developer.sovrn.com/llms.txt
+- target: $.paths['/reports/transactions'].get
+  update:
+    operationId: getReportsTransactions
+- target: $.paths['/reports/merchants'].get
+  update:
+    operationId: getReportsMerchants
+- target: $.paths['/reports/merchantsbydate'].get
+  update:
+    operationId: getReportsMerchantsByDate
+- target: $.paths['/reports/links'].get
+  update:
+    operationId: getReportsLinks
+- target: $.paths['/reports/pages'].get
+  update:
+    operationId: getReportsPages
+- target: $.paths['/reports/merchandise'].get
+  update:
+    operationId: getReportsMerchandise
+- target: $.paths['/reports/networks'].get
+  update:
+    operationId: getReportsNetworks
+- target: $.paths['/reports/cuids'].get
+  update:
+    operationId: getReportsCuids

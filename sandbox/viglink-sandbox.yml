@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.sovrn.com/reference/link
+description: Sovrn Commerce (formerly VigLink) publishes no separate sandbox
+  environment, test keys, or magic test values. Testing is done through the
+  interactive "Try It" API console on each Sovrn Developer Center reference page,
+  authenticated with your real site Secret Key (the legacy VigLink Help Center
+  article "How to test Sovrn //Commerce APIs" documented the same console-based
+  approach). No test-vs-live key separation is documented.
+console:
+  type: api-explorer
+  url: https://developer.sovrn.com/reference/link
+  notes: Every API reference page (Link Check, Bid Check, Campaigns, Reports,
+    Merchant Summaries, Product Recommendations, Promo Codes, Price Comparisons)
+    includes a Try It section to test calls, adjust filters/parameters, and view
+    live results against your own account.
+  authentication: Site Secret Key ("secret {SECRET_KEY}") or Commerce API key,
+    generated in the Sovrn Platform under Commerce Settings.
+test_credentials: none-published
+test_values: none-published
+environments:
+- name: production
+  notes: Single production environment; API calls run against live account data.

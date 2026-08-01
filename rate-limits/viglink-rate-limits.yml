@@ -1,0 +1,41 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: VigLink (Sovrn Commerce)
+providerId: viglink
+generated: '2026-07-21'
+method: searched
+created: '2026-07-21'
+modified: '2026-07-21'
+tags:
+- Rate Limiting
+- Affiliate Marketing
+description: Published rate limits for the Sovrn Commerce (formerly VigLink) APIs.
+  Reporting APIs are limited to 1 request every 60 seconds; the Merchant Group
+  Summaries APIs to 1 request every 10 seconds. Exceeding limits may result in an
+  API key being temporarily blocked or throttled; 429 responses are documented on
+  the Merchant Summaries API.
+sources:
+- https://developer.sovrn.com/reference/get_reports-transactions
+- https://developer.sovrn.com/reference/post_summaries
+- https://developer.sovrn.com/docs/mcp
+responseCodes:
+  throttled: 429
+limits:
+- name: Commerce Real-Time Reports APIs
+  scope: api_key
+  metric: requests_per_minute
+  limit: 1
+  timeFrame: 60 seconds
+  limit_count: 1
+- name: Commerce Merchant Group Summaries APIs
+  scope: api_key
+  metric: requests_per_10_seconds
+  limit: 1
+  timeFrame: 10 seconds
+  limit_count: 1
+notes:
+- Search and recommendation endpoints (price comparisons, product recommendations)
+  allow higher throughput, often supporting multiple requests per second depending
+  on the endpoint (per the Commerce MCP documentation).
+- Limits are per tool/endpoint, not global across the Commerce API surface.

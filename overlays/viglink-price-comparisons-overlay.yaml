@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Sovrn Commerce (VigLink) price-comparisons
+  version: 1.0.0
+extends: openapi/viglink-price-comparisons-openapi.yml
+x-provenance:
+  generated: '2026-07-21'
+  method: generated
+  source: openapi/viglink-price-comparisons-openapi.yml
+  note: Adds operationIds missing from the published per-endpoint OpenAPI fragments; never mutates the harvested spec.
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      provider: viglink
+      harvested: '2026-07-21'
+      source: https://developer.sovrn.com/llms.txt
+- target: $.paths['/sites/{site-api-key}/compare/prices/{market}/by/accuracy'].get
+  update:
+    operationId: comparePricesByAccuracy

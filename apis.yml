@@ -1,22 +1,338 @@
 aid: viglink
-name: Viglink
-description: Viglink is a company surfaced as a portfolio company of uncork-capital and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+name: VigLink (Sovrn Commerce)
+description: VigLink pioneered automatic affiliate link monetization for publishers,
+  turning ordinary product links into revenue-generating affiliate links across a
+  network of tens of thousands of merchants. Founded in 2009 and backed by investors
+  including Uncork Capital, VigLink was acquired by Sovrn in early 2018 and now operates
+  as Sovrn Commerce. The product's public APIs still run on VigLink infrastructure
+  (api.viglink.com, rest.viglink.com, viglink.io) and cover link monetization checks,
+  real-time bid checks, campaigns, real-time revenue reporting, merchant summaries,
+  product recommendations, promo codes, and price comparisons, documented on the
+  Sovrn Developer Center alongside a hosted Commerce MCP server for AI agents.
 url: https://raw.githubusercontent.com/api-evangelist/viglink/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - uncork-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-acquired-by: sovrn
+x-tier: profile
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.sovrn.com/favicon.ico
 tags:
-- Company
-apis: []
+- Affiliate Marketing
+- Commerce
+- Monetization
+- Publishers
+- Links
+- Advertising
+- Reporting
+apis:
+- aid: viglink:viglink-account-api
+  name: VigLink (Sovrn Commerce) Account API
+  description: The Account API from VigLink (Sovrn Commerce) — 1 operation(s) for account.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-account-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-ai-orchestration-api
+  name: VigLink (Sovrn Commerce) Ai Orchestration API
+  description: >-
+    The Ai Orchestration API from VigLink (Sovrn Commerce) — 1 operation(s) for ai orchestration.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Ai Orchestration
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-ai-orchestration-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-bid-api
+  name: VigLink (Sovrn Commerce) Bid API
+  description: The Bid API from VigLink (Sovrn Commerce) — 1 operation(s) for bid.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Bid
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-bid-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-link-api
+  name: VigLink (Sovrn Commerce) Link API
+  description: The Link API from VigLink (Sovrn Commerce) — 1 operation(s) for link.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Link
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-link-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-merchant-group-summaries-api
+  name: VigLink (Sovrn Commerce) Merchant Group Summaries API
+  description: >-
+    The Merchant Group Summaries API from VigLink (Sovrn Commerce) — 2 operation(s) for merchant group
+    summaries.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Merchant Group Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-merchant-group-summaries-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-product-coupons-api
+  name: VigLink (Sovrn Commerce) Product Coupons API
+  description: >-
+    The Product Coupons API from VigLink (Sovrn Commerce) — 1 operation(s) for product coupons.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Product Coupons
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-product-coupons-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-reports-api
+  name: VigLink (Sovrn Commerce) reports API
+  description: The reports API from VigLink (Sovrn Commerce) — 8 operation(s) for reports.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - reports
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-reports-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+- aid: viglink:viglink-sites-api
+  name: VigLink (Sovrn Commerce) Sites API
+  description: The Sites API from VigLink (Sovrn Commerce) — 1 operation(s) for sites.
+  humanURL: https://developer.sovrn.com/reference/link
+  baseURL: https://api.viglink.com/api
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/viglink-sites-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/link
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/getbid
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/campaigns
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_reports-transactions
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/post_summaries
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product_recommendations
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/get_product
+  - type: Documentation
+    url: https://developer.sovrn.com/reference/product-affiliate-api
+common:
+- type: VulnerabilityDisclosure
+  url: security/viglink-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.sovrn.com/responsible-disclosure-policy/
+- type: DomainSecurity
+  url: security/viglink-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/viglink-agentic-access.yml
+- type: Authentication
+  url: authentication/viglink-authentication.yml
+- type: MCPServer
+  url: mcp/viglink-mcp.yml
+- type: LLMsTxt
+  url: llms/viglink-llms.txt
+- type: WellKnown
+  url: well-known/viglink-well-known.yml
+- type: ErrorCatalog
+  url: errors/viglink-problem-types.yml
+- type: Conventions
+  url: conventions/viglink-conventions.yml
+- type: RateLimits
+  url: rate-limits/viglink-rate-limits.yml
+- type: Sandbox
+  url: sandbox/viglink-sandbox.yml
+- type: Components
+  url: components/viglink-components.yml
+- type: DataModel
+  url: data-model/viglink-data-model.yml
+- type: Conformance
+  url: conformance/viglink-conformance.yml
+- type: Lifecycle
+  url: lifecycle/viglink-lifecycle.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  name: Reports overlay
+  url: overlays/viglink-reports-overlay.yaml
+- type: Overlay
+  name: Merchant summaries overlay
+  url: overlays/viglink-merchant-summaries-overlay.yaml
+- type: Overlay
+  name: Product promo codes overlay
+  url: overlays/viglink-product-promo-codes-overlay.yaml
+- type: Overlay
+  name: Price comparisons overlay
+  url: overlays/viglink-price-comparisons-overlay.yaml
+- type: Website
+  url: https://sovrn.com/commerce/
+- type: DeveloperPortal
+  url: https://developer.sovrn.com/
+- type: Documentation
+  url: https://developer.sovrn.com/docs/authorization
+- type: APIReference
+  url: https://developer.sovrn.com/reference/link
+- type: GettingStarted
+  url: https://developer.sovrn.com/docs/authorization
+- type: Support
+  url: https://knowledge.sovrn.com/
+- type: Blog
+  url: https://www.sovrn.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/viglink
+- type: SignUp
+  url: https://commerce.sovrn.com/
+- type: Login
+  url: https://platform.sovrn.com/
+- type: TermsOfService
+  url: https://www.sovrn.com/legal/msa/
+- type: PrivacyPolicy
+  url: https://www.sovrn.com/privacy-policy/privacy-policy/
+- type: StatusPage
+  url: https://status.sovrn.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 30
+  pass: local-v1

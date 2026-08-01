@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.sovrn.com/
+description: Lifecycle posture for the Sovrn Commerce (formerly VigLink) APIs.
+  The brand itself was acquired — VigLink became Sovrn Commerce in 2018 — and the
+  legacy developer center (viglink-developer-center.readme.io) and support site
+  (support.viglink.com) now redirect to Sovrn properties, while the API hosts
+  (api.viglink.com, rest.viglink.com, viglink.io) remain live.
+versioning:
+  scheme: uri-path
+  examples:
+  - host: https://viglink.io
+    current: v1
+  - host: https://comparisons.sovrn.com/api/affiliate
+    current: v3.5
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset header support was
+    found on the Sovrn Developer Center.
+status_page: https://status.sovrn.com/
+sla: null
+brand_transitions:
+- from: VigLink
+  to: Sovrn Commerce
+  date: '2018'
+  evidence:
+  - https://www.viglink.com redirects (301) to https://sovrn.com/commerce/?utm_source=viglink
+  - https://viglink-developer-center.readme.io/ redirects (301) to https://developer.sovrn.com/
+  - https://support.viglink.com/hc/en-us redirects (301) to https://www.sovrn.com/support/what-is-sovrn-commerce
+deprecated_operations: []

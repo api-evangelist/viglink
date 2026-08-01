@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.sovrn.com/docs/configuration-with-javascript
+description: Client-side components published for Sovrn Commerce (formerly
+  VigLink). The core surface is the Commerce JavaScript library (vglnk) that
+  auto-monetizes links on a publisher page, plus an automated price-comparisons
+  embed library and server-side rendering guidance.
+components:
+- family: Commerce JavaScript library (vglnk)
+  kind: javascript-library
+  install: HTML snippet from https://commerce.sovrn.com/install (includes your API key)
+  docs:
+  - https://developer.sovrn.com/docs/configuration-with-javascript
+  - https://developer.sovrn.com/docs/javascript-api
+  configuration:
+    global: vglnk
+    options:
+    - name: key
+      required: true
+      description: Your Commerce API key, found on your account page.
+    - name: api_url
+      required: false
+      default: //api.viglink.com/api
+      description: Base URL for API calls; set when using your own CNAME for api.viglink.com.
+    - name: cuid
+      required: false
+      description: Included as the CUID when the library makes API calls on the page.
+    - name: enabled
+      required: false
+      default: true
+      description: When false, initialization aborts and JS API methods run in failsafe mode.
+    - name: reaffiliate
+      required: false
+      default: false
+      description: Force re-affiliation of already-affiliated links on the page.
+  api:
+  - method: vglnk.open( url[, target] )
+    description: Redirect to URL in the target window/frame, monetizing the URL
+      before redirection; counted as a click in Commerce analytics.
+  - method: vglnk.link( link )
+    description: Ensure Commerce will attempt to monetize a specific link element
+      (HTMLAnchorElement or HTMLAreaElement) when clicked.
+- family: Automated Comparisons
+  kind: embed-library
+  docs:
+  - https://developer.sovrn.com/docs/comparisons-automated-library
+  description: Automated price-comparison displays inserted into publisher content.
+- family: Server-side Rendering
+  kind: integration-pattern
+  docs:
+  - https://developer.sovrn.com/docs/server-side-rendering
+  description: Guidance for affiliating links server-side instead of via the
+    client-side JavaScript library.

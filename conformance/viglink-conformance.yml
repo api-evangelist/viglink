@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ + https://developer.sovrn.com/docs/authorization
+standards:
+- id: api-key-auth
+  conforms: true
+  evidence: All authenticated endpoints use apiKey security schemes — a site-specific
+    Secret Key in the Authorization header ("secret {SECRET_KEY}") or a public API
+    key `key` query parameter (Link Check / Bid Check).
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securitySchemes in any harvested OpenAPI; no OAuth documented
+    on the Sovrn Developer Center for Commerce APIs.
+- id: oidc
+  conforms: false
+  evidence: No openIdConnect schemes; /.well-known/openid-configuration returns 404
+    on all API hosts.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses are application/json envelopes (Google-style error
+    envelope on Campaigns; message/exception/status/timestamp on Link Check) —
+    no application/problem+json.
+- id: rate-limiting-documented
+  conforms: true
+  evidence: Published limits (1/60s reports, 1/10s merchant summaries) with 429
+    responses declared in the Merchant Group Summaries OpenAPI.
+- id: pagination
+  conforms: true
+  evidence: Merchant Group Summaries API paginates with page/pageSize parameters
+    and totalItems/perPage response fields; Reports APIs window by date instead.
+- id: idempotency-keys
+  conforms: false
+  evidence: No idempotency-key contract documented.
+- id: mcp
+  conforms: true
+  evidence: Official hosted Commerce MCP server (beta) at https://mcp.sovrn.com/commerce
+    with published tools, a prompt, and a resource (https://developer.sovrn.com/docs/mcp).
+- id: llms-txt
+  conforms: true
+  evidence: Docs host publishes https://developer.sovrn.com/llms.txt with per-endpoint
+    OpenAPI definitions.

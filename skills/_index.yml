@@ -1,0 +1,11 @@
+generated: '2026-07-21'
+method: generated
+skills:
+- file: viglink-monetize-a-link.md
+  name: Check and monetize a merchant link
+  api: openapi/viglink-link-check-openapi.yml
+  operations: [link, getBid]
+- file: viglink-commerce-content.md
+  name: Build commerce content with campaigns and product recommendations
+  api: openapi/viglink-campaigns-openapi.yml
+  operations: [campaigns, get_product_recommendations]

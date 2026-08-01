@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ (schema properties and id-reference fields)
+description: Entity-relationship graph for Sovrn Commerce (formerly VigLink),
+  derived from the harvested OpenAPI definitions — reporting rows reference
+  campaigns and merchant groups by id, merchant summaries carry geo rate cards,
+  and product surfaces (recommendations, promo codes, price comparisons) hang off
+  merchants.
+entities:
+- name: Account
+  id_field: accountId
+  source: openapi/viglink-reports-openapi.yml
+- name: Campaign
+  id_field: campaignId
+  fields: [campaignId, campaignName]
+  source: openapi/viglink-campaigns-openapi.yml
+- name: MerchantGroup
+  id_field: merchantGroupId (groupId in summaries)
+  fields: [merchantGroupId, merchantGroupName, category, domains, rates, terms, logoImageUrl, sovrnPreferred]
+  source: openapi/viglink-merchant-summaries-openapi.yml
+- name: Transaction
+  id_field: commissionId
+  fields: [commissionId, clickDate, commissionDate, orderValue, epc, country, deviceType, destinationUrl]
+  source: openapi/viglink-reports-openapi.yml
+- name: Link
+  fields: [linkUrl, linkText, linkUtmInfo]
+  source: openapi/viglink-reports-openapi.yml
+- name: Page
+  fields: [pageUrl, pageUtmInfo, pageviews]
+  source: openapi/viglink-reports-openapi.yml
+- name: Product
+  id_field: productId (id in product APIs)
+  fields: [name, retailPrice, salePrice, currency, deeplink, thumbnail, inStock]
+  source: openapi/viglink-product-recommendations-openapi.yml
+- name: PromoCode
+  id_field: code
+  fields: [code, code_description, verified, verified_at, verification_active, price_with_code]
+  source: openapi/viglink-product-promo-codes-openapi.yml
+relationships:
+- from: Account
+  to: Campaign
+  type: has_many
+  via: accountId
+- from: Campaign
+  to: Transaction
+  type: has_many
+  via: campaignId
+- from: MerchantGroup
+  to: Transaction
+  type: has_many
+  via: merchantGroupId
+- from: MerchantGroup
+  to: PromoCode
+  type: has_many
+  via: group_id
+- from: Transaction
+  to: Link
+  type: belongs_to
+  via: linkUrl
+- from: Transaction
+  to: Page
+  type: belongs_to
+  via: pageUrl
+- from: Transaction
+  to: Product
+  type: belongs_to
+  via: productId
+- from: Product
+  to: MerchantGroup
+  type: belongs_to
+  via: merchant

@@ -1,0 +1,64 @@
+generated: '2026-07-21'
+method: searched
+description: Probe of the /.well-known/ discovery surface on the VigLink / Sovrn
+  Commerce API and docs hosts. No well-known documents are published on the API
+  hosts; the operator's security.txt lives on the sovrn.com corporate domain.
+hosts:
+- host: https://api.viglink.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://viglink.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://rest.viglink.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://developer.sovrn.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.viglink.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    note: redirects to https://sovrn.com/commerce/?utm_source=viglink (site-wide redirect to Sovrn)
+notes:
+- The operator (Sovrn) publishes security.txt at https://sovrn.com/.well-known/security.txt
+  (captured in security/viglink-vulnerability-disclosure.yml and in the all/sovrn repo).
+- The docs host publishes an llms.txt index at https://developer.sovrn.com/llms.txt
+  (captured in llms/viglink-llms.txt).

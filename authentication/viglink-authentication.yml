@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/viglink-campaigns-openapi.yml, openapi/viglink-merchant-summaries-openapi.yml,
+  openapi/viglink-price-comparisons-openapi.yml, openapi/viglink-product-promo-codes-openapi.yml,
+  openapi/viglink-reports-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: sec0
+  type: apiKey
+  in: header
+  parameter: authorization
+  sources:
+  - openapi/viglink-campaigns-openapi.yml
+  - openapi/viglink-price-comparisons-openapi.yml
+  - openapi/viglink-reports-openapi.yml
+- name: SecretKey
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Authorization header using the Secret Key scheme. Format: "secret {secret key}"'
+  sources:
+  - openapi/viglink-merchant-summaries-openapi.yml
+  - openapi/viglink-product-promo-codes-openapi.yml

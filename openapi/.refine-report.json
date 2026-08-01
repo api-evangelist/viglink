@@ -1,0 +1,28 @@
+{
+  "provider": "viglink",
+  "sources": [
+    "viglink-account-api-openapi.yml",
+    "viglink-ai-orchestration-api-openapi.yml",
+    "viglink-bid-api-openapi.yml",
+    "viglink-link-api-openapi.yml",
+    "viglink-merchant-group-summaries-api-openapi.yml",
+    "viglink-product-coupons-api-openapi.yml",
+    "viglink-reports-api-openapi.yml",
+    "viglink-sites-api-openapi.yml"
+  ],
+  "outputs": [
+    "viglink-account-api-openapi.yml",
+    "viglink-ai-orchestration-api-openapi.yml",
+    "viglink-bid-api-openapi.yml",
+    "viglink-link-api-openapi.yml",
+    "viglink-merchant-group-summaries-api-openapi.yml",
+    "viglink-product-coupons-api-openapi.yml",
+    "viglink-reports-api-openapi.yml",
+    "viglink-sites-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

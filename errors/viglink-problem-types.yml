@@ -1,0 +1,162 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ (4xx/5xx responses across all Sovrn Commerce specs)
+format: application/json
+description: Error catalog derived from the 4xx/5xx responses declared in the Sovrn Commerce (formerly VigLink) OpenAPI definitions.
+  Errors are returned as application/json envelopes (no RFC 9457 problem+json). The Campaigns API uses a Google-style error
+  envelope (error.code/message/errors[]); the Link Check API returns a message/exception/status/timestamp envelope. Rate limiting
+  is signaled with 429 on the Merchant Group Summaries APIs.
+problems:
+- status: 400
+  title: Bad Request — one or more required fields are missing or malformed.
+  source_operation: openapi/viglink-bid-check-openapi.yml#getBid
+- status: 401
+  title: Unauthorized — the provided `key` is not a valid Commerce API Key.
+  source_operation: openapi/viglink-bid-check-openapi.yml#getBid
+- status: 500
+  title: Internal Server Error.
+  source_operation: openapi/viglink-bid-check-openapi.yml#getBid
+- status: 401
+  title: '401'
+  source_operation: openapi/viglink-campaigns-openapi.yml#campaigns
+- status: 500
+  title: '500'
+  source_operation: openapi/viglink-campaigns-openapi.yml#campaigns
+- status: 400
+  title: '400'
+  source_operation: openapi/viglink-link-check-openapi.yml#link
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#POST /summaries
+- status: 401
+  title: Unauthorized
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#POST /summaries
+- status: 404
+  title: User not found
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#POST /summaries
+- status: 429
+  title: Too many requests (rate limit exceeded)
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#POST /summaries
+- status: 500
+  title: Internal server error
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#POST /summaries
+- status: 400
+  title: Bad request parameters
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#GET /summaries/delta
+- status: 401
+  title: Unauthorized request
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#GET /summaries/delta
+- status: 404
+  title: Resource not found
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#GET /summaries/delta
+- status: 429
+  title: Too many requests (rate limit exceeded)
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#GET /summaries/delta
+- status: 500
+  title: Internal server error
+  source_operation: openapi/viglink-merchant-summaries-openapi.yml#GET /summaries/delta
+- status: 400
+  title: null
+  source_operation: openapi/viglink-price-comparisons-openapi.yml#GET /sites/{site-api-key}/compare/prices/{market}/by/accuracy
+- status: default
+  title: null
+  source_operation: openapi/viglink-price-comparisons-openapi.yml#GET /sites/{site-api-key}/compare/prices/{market}/by/accuracy
+- status: 400
+  title: Invalid request parameters.
+  source_operation: openapi/viglink-product-promo-codes-openapi.yml#GET /product
+- status: 401
+  title: Unauthorized.
+  source_operation: openapi/viglink-product-promo-codes-openapi.yml#GET /product
+- status: 404
+  title: Resource not found.
+  source_operation: openapi/viglink-product-promo-codes-openapi.yml#GET /product
+- status: 500
+  title: Internal server error.
+  source_operation: openapi/viglink-product-promo-codes-openapi.yml#GET /product
+- status: 400
+  title: Invalid status value
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/transactions
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchants
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchants
+- status: 404
+  title: Merchant data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchants
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchants
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchantsbydate
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchantsbydate
+- status: 404
+  title: Merchant data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchantsbydate
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchantsbydate
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/links
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/links
+- status: 404
+  title: Links data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/links
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/links
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/pages
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/pages
+- status: 404
+  title: Page data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/pages
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/pages
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchandise
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchandise
+- status: 404
+  title: Merchandise data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchandise
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/merchandise
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/networks
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/networks
+- status: 404
+  title: Network data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/networks
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/networks
+- status: 400
+  title: Bad request
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/cuids
+- status: 401
+  title: Authorization information is missing or invalid
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/cuids
+- status: 404
+  title: Page data not found
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/cuids
+- status: 5XX
+  title: Unexpected error
+  source_operation: openapi/viglink-reports-openapi.yml#GET /reports/cuids

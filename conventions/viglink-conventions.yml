@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.sovrn.com/docs/authorization
+description: Cross-cutting request/response conventions for the Sovrn Commerce
+  (formerly VigLink) APIs, captured from the Sovrn Developer Center and derived
+  from the harvested OpenAPI definitions.
+authentication:
+  style: apiKey
+  schemes:
+  - name: Secret Key header
+    header: Authorization
+    format: secret {SECRET_KEY}
+    notes: The word "secret" must be followed by a space before the key. Secret
+      keys are site-specific — different sites in the same account use different
+      secret keys. Generated in the Sovrn Platform under Commerce Settings.
+    used_by:
+    - Campaigns API
+    - Real-Time Reports API
+    - Merchant Group Summaries API
+    - Product Promo Codes API
+    - Price Comparisons API
+    - Commerce MCP Server
+  - name: API key query parameter
+    parameter: key
+    in: query
+    notes: The public Commerce API key (found on the account page at
+      commerce.sovrn.com) is passed as a `key` query parameter on the Link Check
+      and Bid Check APIs.
+    used_by:
+    - Link Check API
+    - Bid Check API
+  cross_link: authentication/viglink-authentication.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key contract is documented for the Commerce APIs; the
+    read-heavy surface (checks, reports, summaries) is naturally idempotent GETs.
+pagination:
+  style: mixed
+  notes: The Real-Time Reports APIs are windowed by date rather than paginated —
+    each request is limited to one day of data (clickDate, commissionDate, or
+    updateDate in yyyy-mm-dd format); to get a period, call once per day. The
+    Merchant Group Summaries API uses page/pageSize parameters with
+    totalItems/perPage in the response.
+  cross_link: openapi/viglink-reports-openapi.yml
+dates:
+  format: yyyy-mm-dd
+  notes: At least one date (clickDate, commissionDate, or updateDate) is required
+    on each Real-Time Reports call. Delta queries use updateDate to request only
+    transactions updated on a given day.
+filtering:
+  notes: Reports responses can be filtered by clickDate, commissionDate,
+    updateDate, campaignIds, merchantGroupIds, and programType; campaignIds and
+    merchantGroupIds accept comma-separated numeric ID lists.
+versioning:
+  scheme: uri-path
+  examples:
+  - https://viglink.io/v1 (Real-Time Reports)
+  - https://comparisons.sovrn.com/api/affiliate/v3.5 (Price Comparisons)
+error_envelope:
+  format: application/json
+  notes: No RFC 9457 problem+json. The Campaigns API uses a Google-style envelope
+    (error.code/message/errors[] with reason/location); the Link Check API returns
+    message/exception/status/timestamp.
+  cross_link: errors/viglink-problem-types.yml
+rate_limits:
+  signaling: 429 Too Many Requests (documented on Merchant Group Summaries APIs);
+    exceeding limits may result in the API key being temporarily blocked or throttled.
+  published:
+  - Real-Time Reports APIs — 1 request every 60 seconds
+  - Merchant Group Summaries APIs — 1 request every 10 seconds
+  cross_link: rate-limits/viglink-rate-limits.yml

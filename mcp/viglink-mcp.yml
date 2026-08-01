@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.sovrn.com/docs/mcp
+status: published
+name: Commerce MCP Server (Sovrn Commerce, formerly VigLink)
+description: Official hosted Commerce MCP server (beta) that connects affiliate
+  data, campaigns, and products directly to AI tools — affiliate search, reporting,
+  and link generation through natural language.
+server:
+  name: Commerce MCP Server
+  transport: http
+  url: https://mcp.sovrn.com/commerce
+  authentication:
+    type: apiKey
+    header: Authorization
+    format: secret {SECRET_KEY}
+    docs: https://developer.sovrn.com/docs/authorization
+rate_limits:
+  note: Rate limits are enforced by the underlying Sovrn Commerce APIs per tool,
+    not by the MCP server itself. Reporting/transaction tools are typically limited
+    to 1 request per 60 seconds; search and recommendation tools allow higher throughput.
+tools:
+- name: comp_search_prices
+  description: Search affiliated product prices
+- name: link_check_link
+  description: Validate or convert merchant URLs into affiliate links
+- name: rec_recommend_products
+  description: Return related or recommended products
+- name: trx_Transactions
+  description: Retrieve detailed transaction-level data
+- name: trx_Merchants
+  description: Aggregate reporting by merchant
+- name: trx_Merchants_By_Date
+  description: Merchant-level performance grouped by date
+- name: trx_Links
+  description: Transaction data grouped by link
+- name: trx_Pages
+  description: Transaction data grouped by page
+- name: trx_Merchandise
+  description: Product-level transaction and revenue data
+- name: trx_Sources
+  description: Transactions grouped by traffic source
+- name: trx_Networks
+  description: Transactions grouped by network
+- name: trx_CUIDs
+  description: Click or user-level analytics and attribution
+prompts:
+- name: setup_commerce_workflow
+  description: Initialize the Commerce MCP workflow environment
+resources:
+- name: get_campaigns
+  description: Retrieve active campaigns and metadata
+demos: https://developer.sovrn.com/docs/mcp-demos

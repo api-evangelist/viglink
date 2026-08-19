@@ -1,0 +1,5247 @@
+{
+  "item": [
+    {
+      "id": "334ecbf1-f3bf-44c7-b328-5b752d86daa2",
+      "name": "reports",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2902997-2d19-48b9-bf4e-77a99b81ac14",
+          "name": "Transactions",
+          "request": {
+            "name": "Transactions",
+            "description": {
+              "content": "This endpoint is used to query all commission events (transactions) that have occurred or been updated on a specified date. This data can be used to see individual link performance, actualized earnings, individual site performance and more, all in real-time.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDate",
+                  "value": "<date>",
+                  "description": "Click date for filtering"
+                },
+                {
+                  "disabled": false,
+                  "key": "commissionDate",
+                  "value": "<date>",
+                  "description": "Commission date for filtering"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateDate",
+                  "value": "<date>",
+                  "description": "Update date for filtering"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40ea865d-5c6d-4218-a854-1f371063f8cf",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "commissionDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "updateDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"revenueId\": 3702.5556464867736,\n      \"clickSid\": \"string\",\n      \"accountId\": 8920.097359171825,\n      \"commissionId\": \"string\",\n      \"merchantGroupId\": 2945,\n      \"merchantGroupName\": \"string\",\n      \"campaignId\": 6443.423607993548,\n      \"campaignName\": \"string\",\n      \"clickDate\": \"string\",\n      \"commissionDate\": \"string\",\n      \"updateDate\": \"string\",\n      \"publisherRevenue\": 6960.388856386913,\n      \"orderValue\": 5590.900174469866,\n      \"cuid\": \"string\",\n      \"linkUtmInfo\": {\n        \"utmSource\": \"string\",\n        \"utmMedium\": \"string\",\n        \"utmCampaign\": \"string\",\n        \"utmTerm\": \"string\",\n        \"utmContent\": \"string\"\n      },\n      \"pageUtmInfo\": {\n        \"utmSource\": \"string\",\n        \"utmMedium\": \"string\",\n        \"utmCampaign\": \"string\",\n        \"utmTerm\": \"string\",\n        \"utmContent\": \"string\"\n      },\n      \"destinationUrl\": \"string\",\n      \"pageUrl\": \"string\",\n      \"affProduct\": \"UNK\",\n      \"affProductSubType\": \"string\",\n      \"programType\": \"string\",\n      \"networkName\": \"string\",\n      \"country\": \"string\",\n      \"deviceType\": \"MBL\",\n      \"merchandise\": [\n        {\n          \"productId\": \"string\",\n          \"productName\": \"string\",\n          \"price\": 100.99,\n          \"quantity\": 10\n        },\n        {\n          \"productId\": \"string\",\n          \"productName\": \"string\",\n          \"price\": 100.99,\n          \"quantity\": 10\n        }\n      ]\n    },\n    {\n      \"revenueId\": 4378.0079845926775,\n      \"clickSid\": \"string\",\n      \"accountId\": 6108.861115177639,\n      \"commissionId\": \"string\",\n      \"merchantGroupId\": 942,\n      \"merchantGroupName\": \"string\",\n      \"campaignId\": 1326.9985747252845,\n      \"campaignName\": \"string\",\n      \"clickDate\": \"string\",\n      \"commissionDate\": \"string\",\n      \"updateDate\": \"string\",\n      \"publisherRevenue\": 7443.310396949403,\n      \"orderValue\": 6716.884911871467,\n      \"cuid\": \"string\",\n      \"linkUtmInfo\": {\n        \"utmSource\": \"string\",\n        \"utmMedium\": \"string\",\n        \"utmCampaign\": \"string\",\n        \"utmTerm\": \"string\",\n        \"utmContent\": \"string\"\n      },\n      \"pageUtmInfo\": {\n        \"utmSource\": \"string\",\n        \"utmMedium\": \"string\",\n        \"utmCampaign\": \"string\",\n        \"utmTerm\": \"string\",\n        \"utmContent\": \"string\"\n      },\n      \"destinationUrl\": \"string\",\n      \"pageUrl\": \"string\",\n      \"affProduct\": \"PCR\",\n      \"affProductSubType\": \"string\",\n      \"programType\": \"string\",\n      \"networkName\": \"string\",\n      \"country\": \"string\",\n      \"deviceType\": \"UKN\",\n      \"merchandise\": [\n        {\n          \"productId\": \"string\",\n          \"productName\": \"string\",\n          \"price\": 100.99,\n          \"quantity\": 10\n        },\n        {\n          \"productId\": \"string\",\n          \"productName\": \"string\",\n          \"price\": 100.99,\n          \"quantity\": 10\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73dab90b-301a-4e0b-9cd6-295b1fe6c5cc",
+              "name": "Invalid status value",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "commissionDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "updateDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "504d893c-459d-4476-a131-1c66435c7450",
+          "name": "Merchants",
+          "request": {
+            "name": "Merchants",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Merchant. This data can be used to see individual merchant performance, your top performing merchants, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "merchants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef420b78-cdbe-4694-b279-38e8cc4b2652",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 3948.6720628410853,\n      \"clicks\": 4806.904921760907,\n      \"sales\": 6611.689136000262,\n      \"actions\": 6840.776600100542,\n      \"conversionRate\": 7110.8162878662615,\n      \"epc\": 914.8932636737806,\n      \"merchantGroupId\": 4212,\n      \"merchantGroupName\": \"string\"\n    },\n    {\n      \"revenue\": 8977.73434578856,\n      \"clicks\": 1100.2007025564753,\n      \"sales\": 1712.6966232123552,\n      \"actions\": 4741.649445446567,\n      \"conversionRate\": 5495.7020624518145,\n      \"epc\": 8982.97853295074,\n      \"merchantGroupId\": 3618,\n      \"merchantGroupName\": \"string\"\n    }\n  ],\n  \"totals\": {\n    \"revenueTotal\": 6914.284069701882,\n    \"clicksTotal\": 8392.027460212012,\n    \"salesTotal\": 7218.5130211527,\n    \"actionsTotal\": 6109.416479233155,\n    \"conversionRateTotal\": 9641.716564452867,\n    \"epcTotal\": 4229.752342596499,\n    \"merchantGroupIdsTotal\": 3806.272030249034,\n    \"merchantGroupNameTotal\": 650.4110490137538\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "febf7bd1-329e-4394-9890-ff47c6ef363f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f250a96-ebc3-4956-9cc9-2662b5b46fad",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "12965212-587a-4436-8e6f-18394d7e9c40",
+              "name": "Merchant data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f118bcf-b138-4b0f-a7fb-3b473cb8fdc1",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ccb7f6a-617d-414e-ad2c-cfde21f3a9e0",
+          "name": "Merchants By Date",
+          "request": {
+            "name": "Merchants By Date",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Merchant and Date. This data can be used to see individual merchant performance by day, your top performing merchants, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "merchantsbydate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a544a94-b657-48a4-aa2b-bc4f2fda20bc",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchantsbydate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 7277.862270462126,\n      \"clicks\": 9334.805288655829,\n      \"sales\": 7425.110359536039,\n      \"actions\": 7872.784729322179,\n      \"conversionRate\": 980.5450550727668,\n      \"epc\": 3606.525103329067,\n      \"date\": \"string\",\n      \"merchantGroupId\": 3747,\n      \"merchantGroupName\": \"string\"\n    },\n    {\n      \"revenue\": 8760.31321898852,\n      \"clicks\": 1902.173284261578,\n      \"sales\": 2859.711900919917,\n      \"actions\": 3186.384536601633,\n      \"conversionRate\": 7903.7800287240725,\n      \"epc\": 9286.192862499833,\n      \"date\": \"string\",\n      \"merchantGroupId\": 3187,\n      \"merchantGroupName\": \"string\"\n    }\n  ],\n  \"totals\": {\n    \"revenueTotal\": 2809.434290823605,\n    \"clicksTotal\": 3132.593889470706,\n    \"salesTotal\": 4297.610113330271,\n    \"actionsTotal\": 528.5291174653717,\n    \"conversionRateTotal\": 3109.2723181332826,\n    \"epcTotal\": 138.1285651159736,\n    \"merchantGroupIdsTotal\": 1221.5983119339169,\n    \"merchantGroupNameTotal\": 4990.698772213404\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a41999a-36e6-42ef-8a8a-d474b3b3f36a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchantsbydate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61c676ff-c5f2-4b9c-9085-f4b2092deecf",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchantsbydate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3954202c-9018-439d-8a96-5dbce01fbe8d",
+              "name": "Merchant data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchantsbydate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "542bc190-6cb3-4f93-bedf-db061f30997f",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchantsbydate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c3fedba-7fc4-4d2c-ace2-8567f4b90fab",
+          "name": "Links",
+          "request": {
+            "name": "Links",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Link. This data can be used to see individual merchant link performance, your top performing merchant links, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "851d4156-563d-406f-8dc0-67ddadc87763",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 3840.438979412033,\n      \"clicks\": 659.045117723076,\n      \"sales\": 3068.3753494266884,\n      \"actions\": 9285.088712793528,\n      \"conversionRate\": 2273.8089219795634,\n      \"epc\": 6517.235643994416,\n      \"linkUrl\": \"string\",\n      \"linkText\": \"string\"\n    },\n    {\n      \"revenue\": 8775.06416420417,\n      \"clicks\": 1685.8834699990778,\n      \"sales\": 1063.2924819575462,\n      \"actions\": 5746.062393917369,\n      \"conversionRate\": 2806.61041943981,\n      \"epc\": 270.12031641495906,\n      \"linkUrl\": \"string\",\n      \"linkText\": \"string\"\n    }\n  ],\n  \"totals\": {\n    \"linkUrlTotal\": 5991.559864646615,\n    \"linkTextTotal\": 4739.978125921635,\n    \"revenueTotal\": 2066.8665889419744,\n    \"clicksTotal\": 8843.348645569336,\n    \"salesTotal\": 9459.56667679416,\n    \"actionsTotal\": 1222.5591939240387,\n    \"conversionRateTotal\": 4047.7212936408037,\n    \"epcTotal\": 2593.5604556370727\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b49e32a-1bb5-4019-9335-bd653cb13d3d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b64aa336-6814-41bf-aa7a-854fe122a23e",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d520aa2b-500c-4c7f-ae30-ebca872e13c9",
+              "name": "Links data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d9e9ed05-d1c0-480e-aad4-3e38e9adf974",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3497b2a3-72ec-45bf-b0d8-731d0777294f",
+          "name": "Pages",
+          "request": {
+            "name": "Pages",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Page. This data can be used to see individual page performance, your top performing pages, actualized earnings, and more, all in real-time. Metrics include Pageviews, RPM, Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "pages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6066ad5-ee5b-4829-b653-f69bd9a3b844",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 1338.4252603870561,\n      \"clicks\": 6253.932245723918,\n      \"sales\": 1044.1493417453974,\n      \"actions\": 9929.863426414966,\n      \"conversionRate\": 9595.523508071416,\n      \"epc\": 9903.054354709275,\n      \"pageUrl\": \"string\",\n      \"pageviews\": 4670.888339939279,\n      \"rpm\": 934.8519278452527\n    },\n    {\n      \"revenue\": 8114.1715811386475,\n      \"clicks\": 5780.2733272726455,\n      \"sales\": 5358.121046745591,\n      \"actions\": 9471.131325027405,\n      \"conversionRate\": 7084.376559657099,\n      \"epc\": 7406.923792880448,\n      \"pageUrl\": \"string\",\n      \"pageviews\": 6894.9682414522385,\n      \"rpm\": 1543.9255652173133\n    }\n  ],\n  \"totals\": {\n    \"revenueTotal\": 1913.9225481388567,\n    \"clicksTotal\": 4063.6672107078375,\n    \"salesTotal\": 7018.587355296041,\n    \"actionsTotal\": 7098.498051817518,\n    \"conversionRateTotal\": 5001.140390142165,\n    \"epcTotal\": 8896.134235455438,\n    \"ctrTotal\": 9345.150716957918,\n    \"rpmTotal\": 1315.1086777389542,\n    \"pageUrlTotal\": 8296.417426720107,\n    \"pageviewsTotal\": 7247.960486116031\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcaf82bb-6ef3-41fa-9c8d-4c23572a4064",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82170cfb-44bf-49bf-8c71-e732a28ce21e",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "669f585f-6980-4946-934c-9982edb425d7",
+              "name": "Page data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e95ff0f-8737-4e72-9232-e1e232d388f1",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3f3a5b4-83b9-434f-b51d-97667d2c76a9",
+          "name": "Merchandise",
+          "request": {
+            "name": "Merchandise",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Merchandise. This data can be used to see individual product performance, your top performing products, actualized earnings, and more, all in real-time. Metrics include Revenue, Sales, and Actions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "merchandise"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01418e47-2eaa-4a0b-b451-b1995b3dfbb8",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchandise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"productName\": \"string\",\n      \"merchantGroupName\": \"string\",\n      \"merchantGroupId\": 5706,\n      \"revenue\": 4034.032835818392,\n      \"sales\": 4285.113076012333,\n      \"actions\": 4964.890209268144\n    },\n    {\n      \"productName\": \"string\",\n      \"merchantGroupName\": \"string\",\n      \"merchantGroupId\": 9264,\n      \"revenue\": 4680.56520275667,\n      \"sales\": 3292.987995481427,\n      \"actions\": 5878.562359864171\n    }\n  ],\n  \"totals\": {\n    \"productNameTotal\": 3842.7471541277546,\n    \"merchantGroupNameTotal\": 7783.608952496217,\n    \"merchantGroupIdsTotal\": 3892.0275308587106,\n    \"revenueTotal\": 9659.122852125814,\n    \"salesTotal\": 4562.6100829387115,\n    \"actionsTotal\": 276.0405760201623\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c322d5c7-2087-431f-90c2-dd3c8b389d74",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchandise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2942fe7-9324-4d0a-90e5-a3c97026cf24",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchandise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a134938b-fd68-4d0a-ba38-ade1120a77fa",
+              "name": "Merchandise data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchandise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4e0100af-4dad-4ce6-aa1e-be9d2375cad1",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "merchandise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80b46b09-dbe1-4943-9e20-680b2a246513",
+          "name": "Networks",
+          "request": {
+            "name": "Networks",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by Network. This data can be used to see connected Network performance, your top performing Networks, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "104b4b42-ea26-491f-a51f-549a4a94754f",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 8570.014580207659,\n      \"clicks\": 6034.236359828799,\n      \"sales\": 8448.144953076453,\n      \"actions\": 6364.3782847813945,\n      \"conversionRate\": 2107.7767416080997,\n      \"epc\": 561.823239346133,\n      \"networkName\": \"string\"\n    },\n    {\n      \"revenue\": 5572.9732542318725,\n      \"clicks\": 1831.0389248533243,\n      \"sales\": 6083.488688961408,\n      \"actions\": 9389.07618933824,\n      \"conversionRate\": 4859.377497476055,\n      \"epc\": 5669.8555381977685,\n      \"networkName\": \"string\"\n    }\n  ],\n  \"totals\": {\n    \"networkNameTotal\": 6495.092115935324,\n    \"revenueTotal\": 126.558687976438,\n    \"clicksTotal\": 3170.7666095268714,\n    \"salesTotal\": 6187.309253567491,\n    \"actionsTotal\": 6551.524507647918,\n    \"conversionRateTotal\": 3533.4136686082074,\n    \"epcTotal\": 9043.46209588478\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "161442c7-ddb5-4d81-bed9-8df7316834cf",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "08665869-3926-4307-b0d0-b42ac047119c",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c85cb72f-d403-4e31-a706-9e41db3f09b7",
+              "name": "Network data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1d8f03a0-ed8f-4e96-bbb3-b84ea28def2f",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cfd3fa05-8d93-456e-aa59-c8fcf0d61b55",
+          "name": "CUIDs",
+          "request": {
+            "name": "CUIDs",
+            "description": {
+              "content": "This endpoint is used to query aggregated performance metrics by CUID. This data can be used to see individual CUID performance, your top performing CUIDs, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                "cuids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "clickDateStart",
+                  "value": "<date>",
+                  "description": "(Required) Start Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "clickDateEnd",
+                  "value": "<date>",
+                  "description": "(Required) End Date"
+                },
+                {
+                  "disabled": false,
+                  "key": "campaignIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of campaign IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "subIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of sub IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "merchantGroupIds",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant group IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuids",
+                  "value": "<string>",
+                  "description": "Comma separated list of CUIDs (custom tracking IDs)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM campaings"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of page UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmSource",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM sources"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmMedium",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM mediums"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmCampaign",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM campaigns"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmTerm",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM terms"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkUtmContent",
+                  "value": "<string>",
+                  "description": "Comma seperated list of link UTM contents"
+                },
+                {
+                  "disabled": false,
+                  "key": "programType",
+                  "value": "<string>",
+                  "description": "Type of program (CPA/CPC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sovrnProduct",
+                  "value": "<string>",
+                  "description": "Sovrn Product"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "Type of device"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Two-letter ISO country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2827073f-4964-4807-a119-c0ebf91d29eb",
+              "name": "successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "cuids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"revenue\": 549.2720273491369,\n      \"clicks\": 2976.4512999592716,\n      \"sales\": 7036.24248918556,\n      \"actions\": 3927.2583239202286,\n      \"conversionRate\": 3259.7913307503977,\n      \"epc\": 9423.75046867175,\n      \"cuid\": \"string\"\n    },\n    {\n      \"revenue\": 2226.085577399988,\n      \"clicks\": 2549.731012482164,\n      \"sales\": 7275.313510169882,\n      \"actions\": 7215.104232515673,\n      \"conversionRate\": 794.9459004463245,\n      \"epc\": 1409.7918490274453,\n      \"cuid\": \"string\"\n    }\n  ],\n  \"totals\": {\n    \"cuidsTotal\": 8323.95390552624,\n    \"revenueTotal\": 1518.1478791452541,\n    \"clicksTotal\": 8510.51433797653,\n    \"salesTotal\": 9574.650479705273,\n    \"actionsTotal\": 3935.5296776527193,\n    \"conversionRateTotal\": 2292.624330808133,\n    \"epcTotal\": 751.3859384350352\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da8826de-25ca-4ba7-93bd-e708aa4124cc",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "cuids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ece88876-875f-4b47-b152-be1e79d115e4",
+              "name": "Authorization information is missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "cuids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf72a04c-d3d9-49a8-adc4-bd44abda2bf4",
+              "name": "Page data not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "cuids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "941d6c61-771f-47b6-8308-4e1c368a353a",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "cuids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "clickDateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "clickDateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "campaignIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "merchantGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmSource",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmMedium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmCampaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkUtmContent",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "programType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sovrnProduct",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "deviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://viglink.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "60c8dcd0-d857-479c-9c65-c8f02815fd44",
+    "name": "Bid Check Account reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

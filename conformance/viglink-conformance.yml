@@ -1,6 +1,6 @@
-generated: '2026-07-21'
-method: derived
-source: openapi/ + https://developer.sovrn.com/docs/authorization
+generated: '2026-08-13'
+method: searched
+source: openapi/ + https://developer.sovrn.com/docs/authorization + https://www.sovrn.com/trust-center/ + https://www.sovrn.com/about-sovrn/security/
 standards:
 - id: api-key-auth
   conforms: true
@@ -39,3 +39,47 @@ standards:
   conforms: true
   evidence: Docs host publishes https://developer.sovrn.com/llms.txt with per-endpoint
     OpenAPI definitions.
+- id: rfc9116-security-txt
+  conforms: partial
+  evidence: The operator serves an RFC 9116 security.txt at
+    https://www.sovrn.com/.well-known/security.txt (HTTP 200) with Contact, Policy,
+    Canonical and Preferred-Languages fields — but its Expires value is
+    2025-10-14T07:00:00.000Z, which had already passed at the 2026-08-13 probe. RFC
+    9116 says an expired file should not be relied upon.
+- id: tag-platinum
+  conforms: true
+  evidence: '"Sovrn maintains Trustworthy Accountability Group (TAG) Platinum status."
+    (https://www.sovrn.com/about-sovrn/security/) — the only named industry
+    certification on the public trust surface.'
+- id: gdpr
+  conforms: true
+  evidence: Sovrn publishes a Data Processing Addendum (Sovrn as Data Importer),
+    Standard Contractual Clause selections and addendum, and a subprocessor list at
+    https://www.sovrn.com/legal/subprocessors/ (https://www.sovrn.com/trust-center/).
+- id: ccpa
+  conforms: true
+  evidence: CCPA Metrics published at
+    https://www.sovrn.com/privacy-policy/ccpa-metrics/ plus a Your Privacy Choices
+    policy center (https://www.sovrn.com/trust-center/).
+- id: soc2
+  conforms: false
+  evidence: No SOC 2 report, ISO 27001 certificate, PCI DSS attestation or downloadable
+    audit evidence is named or offered on the Trust Center or the security page; the
+    security page refers to "our industry certifications" without naming any beyond TAG.
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and the legacy /.well-known/agent.json return
+    404 on developer.sovrn.com, www.sovrn.com, sovrn.com, mcp.sovrn.com and
+    api.viglink.com (probed 2026-08-13). No agent card is published.
+- id: openapi-operationids
+  conforms: false
+  evidence: Only 4 of 16 harvested operations declare an operationId (link, getBid,
+    campaigns, get_product_recommendations); the eight Real-Time Reports operations,
+    both Merchant Group Summaries operations, Product Promo Codes and Price
+    Comparisons declare none, so MCP tools cannot be resolved back to named contract
+    operations. See mcp/viglink-tool-crosswalk.yml.
+- id: sdk-distribution
+  conforms: false
+  evidence: No first-party package on npm, PyPI, RubyGems, Packagist, Maven Central,
+    NuGet, crates.io or pkg.go.dev (all probed 2026-08-13). The only first-party client
+    library is the unversioned CDN script https://cdn.viglink.com/api/vglnk.js.

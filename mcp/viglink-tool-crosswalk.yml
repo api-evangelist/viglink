@@ -1,0 +1,174 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  mcp/viglink-mcp.yml (tool list from https://developer.sovrn.com/docs/mcp) bound to
+  openapi/*.yml operations in this repo
+description: >-
+  Binds each published Commerce MCP tool to the Sovrn Commerce REST operation that
+  backs it, so an agent can see which MCP tool inherits which OpenAPI parameters and
+  which capabilities exist on only one surface. The live MCP schema is auth-gated —
+  POST tools/list to https://mcp.sovrn.com/commerce returned HTTP 401
+  {"error":"invalid_token"} on 2026-08-13 — so tools are mapped by name and published
+  description, not by fetched inputSchema. Confidence is recorded per row accordingly.
+surfaces:
+  openapi:
+  - openapi/viglink-account-api-openapi.yml
+  - openapi/viglink-ai-orchestration-api-openapi.yml
+  - openapi/viglink-bid-api-openapi.yml
+  - openapi/viglink-link-api-openapi.yml
+  - openapi/viglink-merchant-group-summaries-api-openapi.yml
+  - openapi/viglink-product-coupons-api-openapi.yml
+  - openapi/viglink-reports-api-openapi.yml
+  - openapi/viglink-sites-api-openapi.yml
+  graphql: null
+  mcp:
+    url: https://mcp.sovrn.com/commerce
+    transport: http
+    gated: true
+    probe:
+      method: tools/list
+      http_status: 401
+      body: '{"error":"invalid_token"}'
+      checked: '2026-08-13'
+spec_note: >-
+  Only 4 of the 16 harvested REST operations declare an operationId (link, getBid,
+  campaigns, get_product_recommendations). For the other 12 the crosswalk binds by
+  METHOD + path, because the provider's published spec gives no stable operation
+  identifier to bind to. That absence is itself the finding — it is what stops an
+  agent from resolving an MCP tool back to a named contract operation.
+crosswalk:
+- tool: comp_search_prices
+  category: search
+  rest:
+  - GET /sites/{site-api-key}/compare/prices/{market}/by/accuracy
+  spec: openapi/viglink-sites-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+  note: Price Comparisons (Product Affiliate API v3.5) on comparisons.sovrn.com.
+- tool: link_check_link
+  category: links
+  rest:
+  - link
+  spec: openapi/viglink-link-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+  note: >-
+    Link Check API, GET /link/. The docs also describe a non-API link-wrapping form
+    (https://sovrn.co?key=…&u=…) documented at
+    https://developer.sovrn.com/reference/building-affiliate-links — a redirect
+    surface, not an operation in any spec.
+- tool: rec_recommend_products
+  category: products
+  rest:
+  - get_product_recommendations
+  spec: openapi/viglink-ai-orchestration-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Transactions
+  category: reporting
+  rest:
+  - GET /reports/transactions
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Merchants
+  category: reporting
+  rest:
+  - GET /reports/merchants
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Merchants_By_Date
+  category: reporting
+  rest:
+  - GET /reports/merchantsbydate
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Links
+  category: reporting
+  rest:
+  - GET /reports/links
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Pages
+  category: reporting
+  rest:
+  - GET /reports/pages
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Merchandise
+  category: reporting
+  rest:
+  - GET /reports/merchandise
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_Networks
+  category: reporting
+  rest:
+  - GET /reports/networks
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: trx_CUIDs
+  category: reporting
+  rest:
+  - GET /reports/cuids
+  spec: openapi/viglink-reports-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+- tool: get_campaigns
+  kind: resource
+  category: campaigns
+  rest:
+  - campaigns
+  spec: openapi/viglink-account-api-openapi.yml
+  binding: one-to-one
+  confidence: high
+  note: Exposed as an MCP resource rather than a tool.
+mcp_only:
+- tool: trx_Sources
+  reason: >-
+    No corresponding REST operation. The Real-Time Reports API publishes eight report
+    dimensions (transactions, merchants, merchantsbydate, links, pages, merchandise,
+    networks, cuids) and traffic-source grouping is not among them; the MCP server
+    exposes a source-level report that the public contract does not.
+- tool: setup_commerce_workflow
+  kind: prompt
+  reason: MCP prompt that initializes the Commerce workflow environment; no REST analogue.
+rest_only:
+- operation: getBid
+  spec: openapi/viglink-bid-api-openapi.yml
+  path: GET /api/bid
+  reason: >-
+    Real-time bid check on click traffic. Documented and specced, but no MCP tool
+    surfaces it.
+- operation: null
+  spec: openapi/viglink-product-coupons-api-openapi.yml
+  path: GET /product
+  reason: Product Promo Codes API; no MCP tool exposes promo-code retrieval.
+- operation: null
+  spec: openapi/viglink-merchant-group-summaries-api-openapi.yml
+  path: POST /summaries
+  reason: Approved-merchant summaries with geo rates; no MCP tool exposes it.
+- operation: null
+  spec: openapi/viglink-merchant-group-summaries-api-openapi.yml
+  path: GET /summaries/delta
+  reason: Merchant delta updates; no MCP tool exposes it.
+coverage:
+  mcp_tools_published: 12
+  mcp_prompts_published: 1
+  mcp_resources_published: 1
+  rest_operations: 16
+  mapped: 12
+  mcp_only: 2
+  rest_only: 4
+  rest_operations_with_operationid: 4
+  inputschemas_fetched: 0
+  inputschemas_note: >-
+    Live tool inputSchemas require an authenticated Secret Key; re-run tools/list with
+    an Authorization "secret {SECRET_KEY}" header to upgrade every row from
+    name-and-semantics matching to schema-verified.

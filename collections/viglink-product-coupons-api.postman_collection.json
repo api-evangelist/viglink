@@ -1,0 +1,457 @@
+{
+  "item": [
+    {
+      "id": "c0f40b1c-129c-49f3-a5f9-672716b437da",
+      "name": "Product Coupons",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d07f1a77-7122-46e3-9e94-7a364796c1d8",
+          "name": "Product coupons by URL",
+          "request": {
+            "name": "Product coupons by URL",
+            "description": {
+              "content": "Returns verified and unverified coupon codes for a specific product URL, along with merchant information and verification status.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "product"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Site API key for the site requesting coupons.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_url",
+                  "value": "<url>",
+                  "description": "(Required) Original retailer product page URL. Must not be an affiliate or redirect URL.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_unverified",
+                  "value": "true",
+                  "description": "Whether to include unverified coupon codes after verified results. Defaults to true.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "cuid",
+                  "value": "<string>",
+                  "description": "Custom identifier used to associate the click with a user, page, campaign, or event.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "utm_source",
+                  "value": "<string>",
+                  "description": "Identifies the source of the traffic (e.g., website, newsletter, twitter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "utm_medium",
+                  "value": "<string>",
+                  "description": "Identifies the marketing medium (e.g., email, social, banner)."
+                },
+                {
+                  "disabled": false,
+                  "key": "utm_campaign",
+                  "value": "<string>",
+                  "description": "Identifies the campaign name, promotion, or initiative."
+                },
+                {
+                  "disabled": false,
+                  "key": "utm_term",
+                  "value": "<string>",
+                  "description": "Identifies paid search keywords or targeting terms."
+                },
+                {
+                  "disabled": false,
+                  "key": "utm_content",
+                  "value": "<string>",
+                  "description": "Differentiates similar links or placements on the same page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "39fd7f92-351e-4766-a400-07df28a9f7fc",
+              "name": "Successfully retrieved coupon code.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "b5d593ce9de90b8a324ca24e5fcc32af"
+                    },
+                    {
+                      "key": "product_url",
+                      "value": "https://www.kiehls.com/3605970407964.html"
+                    },
+                    {
+                      "key": "include_unverified",
+                      "value": "true"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "cuid152"
+                    },
+                    {
+                      "key": "utm_source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_medium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_campaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_content",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"merchant\": {\n    \"domain\": \"kiehls.com\",\n    \"group_id\": 2528,\n    \"group_name\": \"Kiehl's\",\n    \"logo_url\": \"https://images.viglink.com/merchant/logo/official/240x120/kiehl-s/922daea08e0d6b4e23cf16843bf89e5b5d68d367.png?url=http%3A%2F%2Fwww.viglink.com%2Fmerchants%2F2528.gif&text=Kiehl%27s&logoId=1633\"\n  },\n  \"scan\": {\n    \"verification_active\": false,\n    \"when_to_check_back\": 3600\n  },\n  \"coupons\": [\n    {\n      \"id\": \"0d5c0846d5430357e07820f153040c36\",\n      \"code\": \"WELCOME20\",\n      \"currency\": \"USD\",\n      \"verified\": true,\n      \"affiliated_url\": \"https://redirect.viglink.com/...\",\n      \"original_price\": 52,\n      \"price_with_code\": 41.6,\n      \"verified_at\": \"2026-02-06T15:18:11.746Z\",\n      \"code_description\": null\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfb0bc97-2ec4-4360-a2e5-24ed6d447325",
+              "name": "Invalid request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "b5d593ce9de90b8a324ca24e5fcc32af"
+                    },
+                    {
+                      "key": "product_url",
+                      "value": "https://www.kiehls.com/3605970407964.html"
+                    },
+                    {
+                      "key": "include_unverified",
+                      "value": "true"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "cuid152"
+                    },
+                    {
+                      "key": "utm_source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_medium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_campaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_content",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b4c6c2a7-9ef1-43f8-a765-8730a19e5a80",
+              "name": "Unauthorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "b5d593ce9de90b8a324ca24e5fcc32af"
+                    },
+                    {
+                      "key": "product_url",
+                      "value": "https://www.kiehls.com/3605970407964.html"
+                    },
+                    {
+                      "key": "include_unverified",
+                      "value": "true"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "cuid152"
+                    },
+                    {
+                      "key": "utm_source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_medium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_campaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_content",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e7f4f7f-7949-49dd-800e-ad4a86bbd794",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "b5d593ce9de90b8a324ca24e5fcc32af"
+                    },
+                    {
+                      "key": "product_url",
+                      "value": "https://www.kiehls.com/3605970407964.html"
+                    },
+                    {
+                      "key": "include_unverified",
+                      "value": "true"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "cuid152"
+                    },
+                    {
+                      "key": "utm_source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_medium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_campaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_content",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "33c920f3-6e06-4eda-8832-8ec22ca86660",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "b5d593ce9de90b8a324ca24e5fcc32af"
+                    },
+                    {
+                      "key": "product_url",
+                      "value": "https://www.kiehls.com/3605970407964.html"
+                    },
+                    {
+                      "key": "include_unverified",
+                      "value": "true"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "cuid152"
+                    },
+                    {
+                      "key": "utm_source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_medium",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_campaign",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "utm_content",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://viglink.io/coupons",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5f98f0a2-a5e6-4cb8-b9b5-ca5544635827",
+    "name": "Bid Check Account Product Coupons API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

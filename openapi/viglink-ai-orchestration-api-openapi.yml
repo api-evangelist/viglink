@@ -16,7 +16,7 @@ info:
     '
   x-source: https://developer.sovrn.com/llms.txt (per-endpoint OpenAPI definitions, harvested 2026-07-21)
 servers:
-- url: https://api.viglink.com
+- url: https://shopping-gallery.prd-commerce.sovrnservices.com
   description: Production
 tags:
 - name: Ai Orchestration

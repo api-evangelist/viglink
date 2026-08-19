@@ -1,0 +1,929 @@
+{
+  "item": [
+    {
+      "id": "0501a2b8-a06f-4a90-855e-ebdcbf910349",
+      "name": "Merchant Group Summaries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb4a709b-339e-4377-86d0-fbf265803092",
+          "name": "Approved Merchants",
+          "request": {
+            "name": "Approved Merchants",
+            "description": {
+              "content": "This endpoint is used to retrieve all approved merchants you can work with, including geo-specific rates and performance metrics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "summaries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "campaignId",
+                  "value": "<long>",
+                  "description": "(Required) ID of the user/campaign to view potential merchants for"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                "key": "Accept-Encoding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"pageSize\": 1000,\n  \"filters\": [\n    {\n      \"type\": \"<string>\",\n      \"values\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    {\n      \"type\": \"<string>\",\n      \"values\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4026d24-da90-419a-b9f8-3a53f0c319a0",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "ETag for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Timestamp of when the resource was last modified",
+                  "key": "Last-Modified",
+                  "value": "2012-04-18T08:36:23.330Z"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"groupId\": 12345,\n      \"name\": \"Merchant A\",\n      \"description\": \"Pet retailer\",\n      \"terms\": \"Standard terms apply\",\n      \"sovrnPreferred\": true,\n      \"logoImageUrl\": \"https://example.com/logo.png\",\n      \"category\": [\n        \"PT\",\n        \"AU\"\n      ],\n      \"sovrn\": {\n        \"CPA\": [\n          {\n            \"geo\": \"US\",\n            \"averageEpc\": 0.15,\n            \"averageOrderValue\": 75.5,\n            \"calculatedCommissionRate\": 0.08,\n            \"rates\": [\n              {\n                \"currentRate\": 8,\n                \"rateFormat\": \"PERCENTAGE\",\n                \"action\": \"Sale\",\n                \"details\": \"8% on all sales\"\n              }\n            ],\n            \"domains\": [\n              \"merchanta.com\"\n            ]\n          }\n        ],\n        \"CPC\": {\n          \"calculatedEpc\": 0.25\n        }\n      }\n    }\n  ],\n  \"page\": 1,\n  \"perPage\": 20,\n  \"totalItems\": 100\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4f1f3e1-217a-492c-903f-14c8444de9af",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a868e32-1cee-47df-baea-cece8366c49c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62fe34af-b70b-445b-93c9-5a732fbebb85",
+              "name": "User not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0619bcd1-76e8-4f91-ab8d-d02af140a056",
+              "name": "Too many requests (rate limit exceeded)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c1aa8337-72ea-4ab1-ba51-ede17b07d5e3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"type\": \"GROUP_ID\",\n      \"values\": [\n        34,\n        384\n      ]\n    },\n    {\n      \"type\": \"CATEGORY\",\n      \"values\": [\n        \"SF\",\n        \"CE\"\n      ]\n    },\n    {\n      \"type\": \"PROGRAM_TYPE\",\n      \"values\": [\n        \"CPA\"\n      ]\n    },\n    {\n      \"type\": \"GEO\",\n      \"values\": [\n        \"us\",\n        \"ca\"\n      ]\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 20\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3434da6-ae6f-4981-8316-82cc0359ff2b",
+          "name": "Merchant Updates",
+          "request": {
+            "name": "Merchant Updates",
+            "description": {
+              "content": "This endpoint retrieves only the updated merchants since your last query, including geo-specific rates and performance metrics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "summaries",
+                "delta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "campaignId",
+                  "value": "<long>",
+                  "description": "(Required) ID of the user/campaign to view potential merchants for"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page number of results to view"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "1000",
+                  "description": "The page size of results to view"
+                },
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<dateTime>",
+                  "description": "Required if 'If-None-Match' is not provided. Filter results updated since this datetime (ISO 8601 format). Note"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Required if 'since' is not provided. ETag header for cache validation",
+                "key": "If-None-Match",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                "key": "Accept-Encoding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "17aef88c-3ba4-4b23-8f8d-d6fa49c4a42e",
+              "name": "Successfully retrieved merchant group summaries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "ETag for caching purposes",
+                  "key": "ETag",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Timestamp of when the resource was last modified",
+                  "key": "Last-Modified",
+                  "value": "2012-04-18T08:36:23.330Z"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"groupId\": 7079,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"terms\": \"string\",\n      \"sovrnPreferred\": true,\n      \"logoImageUrl\": \"string\",\n      \"category\": [\n        \"GM\",\n        \"AG\"\n      ],\n      \"sovrn\": {\n        \"CPA\": [\n          {\n            \"geo\": \"string\",\n            \"averageEpc\": 5226.75133285957,\n            \"averageOrderValue\": 9099.2128593203,\n            \"calculatedCommissionRate\": 7955.564348997117,\n            \"rates\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"domains\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"geo\": \"string\",\n            \"averageEpc\": 74.5914706719597,\n            \"averageOrderValue\": 8257.321991982457,\n            \"calculatedCommissionRate\": 8895.389384957893,\n            \"rates\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"domains\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"CPC\": {\n          \"calculatedEpc\": 4384.988473657635\n        }\n      }\n    },\n    {\n      \"groupId\": 3604,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"terms\": \"string\",\n      \"sovrnPreferred\": true,\n      \"logoImageUrl\": \"string\",\n      \"category\": [\n        \"ED\",\n        \"SF\"\n      ],\n      \"sovrn\": {\n        \"CPA\": [\n          {\n            \"geo\": \"string\",\n            \"averageEpc\": 6325.007475390476,\n            \"averageOrderValue\": 9732.333828177674,\n            \"calculatedCommissionRate\": 1832.68445183282,\n            \"rates\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"domains\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"geo\": \"string\",\n            \"averageEpc\": 6177.873393601033,\n            \"averageOrderValue\": 7517.729923062876,\n            \"calculatedCommissionRate\": 1549.110728657359,\n            \"rates\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"domains\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"CPC\": {\n          \"calculatedEpc\": 8461.279498993192\n        }\n      }\n    }\n  ],\n  \"page\": 9492,\n  \"perPage\": 1147,\n  \"totalItems\": 9605\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e72b3b97-f813-45c3-90ee-0aae1fb10ed2",
+              "name": "No changes since the specified timestamp",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Timestamp of when the resource was last modified",
+                  "key": "Last-Modified",
+                  "value": "2012-04-18T08:36:23.330Z"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0231ed84-4279-4a66-b4e3-65b1b6bf4b2b",
+              "name": "Bad request parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "832c5e8b-60e3-4c2d-b5c4-fb09a904fb55",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d31078d-78f0-4498-a98c-a772b831b67c",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99797638-d4a4-402a-9d91-aa8a7d824d4a",
+              "name": "Too many requests (rate limit exceeded)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0060e400-eb38-4642-b4ca-422df3cdf6e4",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summaries",
+                    "delta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "campaignId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "since",
+                      "value": "2023-04-01T00:00:00Z"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Required if 'since' is not provided. ETag header for cache validation",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Indicates the optional encoding (compression) algorithm the client can understand",
+                    "key": "Accept-Encoding",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://viglink.io/merchants/rates",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "11d9aeaa-6e04-4815-8525-0d269db6bc0b",
+    "name": "Bid Check Account Merchant Group Summaries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

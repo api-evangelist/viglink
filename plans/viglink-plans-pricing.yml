@@ -1,0 +1,81 @@
+generated: '2026-08-13'
+method: searched
+source: https://knowledge.sovrn.com/kb/payments-in-commerce
+description: >-
+  Sovrn Commerce (formerly VigLink) publishes no priced plan tiers and no API pricing
+  page — sovrn.com/pricing/ and sovrn.com/commerce/pricing/ both return 404. The
+  product is offered to publishers at no cost and monetized through a revenue share on
+  affiliate commissions, so what Sovrn does publish is a payout contract rather than a
+  price list. The single access tier and the published payout terms are recorded here.
+plan_count: 1
+model: revenue-share
+currency: USD
+pricing_page: null
+pricing_page_probe:
+- url: https://www.sovrn.com/commerce/pricing/
+  status: 404
+- url: https://sovrn.com/pricing/
+  status: 404
+plans:
+- name: Commerce
+  price: 0
+  currency: USD
+  billing_period: none
+  self_serve: true
+  signup: https://commerce.sovrn.com/
+  included: >-
+    Full Commerce platform and API surface — Link Check, Bid Check, Campaigns,
+    Real-Time Reports, Merchant Group Summaries, Product Recommendations, Product
+    Promo Codes, Price Comparisons, the Commerce JavaScript library, and the Commerce
+    MCP server (beta).
+  quota: null
+  overage: null
+  limits:
+    note: >-
+      Access is not metered by plan. Throughput is governed by the published per-API
+      rate limits (1 request / 60 seconds on Real-Time Reports, 1 request / 10 seconds
+      on Merchant Group Summaries) — see rate-limits/viglink-rate-limits.yml.
+  revenue_model:
+    type: affiliate-commission-share
+    commission_basis:
+    - CPA — commission on eligible sales
+    - CPC — flat rate on clicks sent to eligible product links
+    rate: null
+    rate_note: >-
+      Commission rates vary by merchant and are not published as a rate card. Sovrn
+      does not publish its own take rate on its website.
+  payout_terms:
+    schedule: >-
+      "Sovrn Commerce pays publishers 90 days from the end of the month in which
+      commissions were earned." Commissions earned in January are paid at the end of
+      April.
+    thresholds:
+    - method: wire-transfer
+      minimum: 50
+      currency: USD
+    - method: ACH
+      minimum: 25
+      currency: USD
+    - method: check
+      minimum: 25
+      currency: USD
+    - method: eCheck
+      minimum: 25
+      currency: USD
+    - method: PayPal
+      minimum: 25
+      currency: USD
+    rollover: >-
+      Earnings below the threshold roll into subsequent months until the threshold is
+      exceeded.
+    fees: >-
+      "There are no fees involved. Sovrn Commerce pays all PayPal, ACH, and postage
+      fees" — international wire transfer fees charged by the receiving bank may still
+      apply.
+    source: https://knowledge.sovrn.com/kb/payments-in-commerce
+enterprise:
+  contact_only: false
+  note: >-
+    No enterprise tier, quote form, or paid upgrade is published for Commerce API
+    access. Optional paid merchant-exposure upgrades exist on the merchant side of the
+    marketplace but are not an API access tier.

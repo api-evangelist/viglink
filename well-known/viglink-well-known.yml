@@ -57,8 +57,56 @@ hosts:
   - path: /.well-known/security.txt
     status: 301
     note: redirects to https://sovrn.com/commerce/?utm_source=viglink (site-wide redirect to Sovrn)
+- host: https://www.sovrn.com
+  note: >-
+    Operator corporate domain. Re-probed 2026-08-13; this is the only host in the
+    estate that serves a real /.well-known/ document. sovrn.com (apex) 301s to
+    www.sovrn.com for every /.well-known/ path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    size: 211
+    file: well-known/viglink-security.txt
+    note: >-
+      RFC 9116 security.txt. Expires 2025-10-14T07:00:00.000Z — EXPIRED as of the
+      2026-08-13 probe, which per RFC 9116 §2.5.5 means the document should no longer
+      be relied upon. Contact and Policy targets both still resolve.
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+- host: https://mcp.sovrn.com
+  note: Commerce MCP host. Probed 2026-08-13.
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+    note: >-
+      Plain-text "404 page not found" from the MCP host, not an SPA shell — a genuine
+      absence.
 notes:
-- The operator (Sovrn) publishes security.txt at https://sovrn.com/.well-known/security.txt
-  (captured in security/viglink-vulnerability-disclosure.yml and in the all/sovrn repo).
+- The operator (Sovrn) publishes security.txt at https://www.sovrn.com/.well-known/security.txt
+  (HTTP 200, saved verbatim to well-known/viglink-security.txt; also captured in
+  security/viglink-vulnerability-disclosure.yml and in the all/sovrn repo). This is
+  the only 200-carrying well-known document across the whole VigLink/Sovrn estate —
+  every other path on every other host 404s.
+- The Commerce MCP server at https://mcp.sovrn.com/commerce advertises no OAuth
+  metadata; it authenticates with a static site Secret Key in the Authorization
+  header, so the OAuth well-known probes are expected 404s rather than a gap.
+- No A2A Agent Card is served anywhere. /.well-known/agent-card.json and the legacy
+  /.well-known/agent.json were probed on developer.sovrn.com, www.sovrn.com,
+  sovrn.com, mcp.sovrn.com and api.viglink.com on 2026-08-13 — all 404, and the
+  developer/corporate hosts returned HTML shells rather than JSON. No a2a/ artifact
+  was written.
 - The docs host publishes an llms.txt index at https://developer.sovrn.com/llms.txt
   (captured in llms/viglink-llms.txt).

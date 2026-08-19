@@ -1,27 +1,122 @@
-generated: '2026-07-21'
-method: derived
-source: openapi/viglink-campaigns-openapi.yml, openapi/viglink-merchant-summaries-openapi.yml,
-  openapi/viglink-price-comparisons-openapi.yml, openapi/viglink-product-promo-codes-openapi.yml,
-  openapi/viglink-reports-openapi.yml
+generated: '2026-08-13'
+method: searched
+source: https://developer.sovrn.com/docs/authorization
+derived_from:
+- openapi/viglink-account-api-openapi.yml
+- openapi/viglink-merchant-group-summaries-api-openapi.yml
+- openapi/viglink-sites-api-openapi.yml
+- openapi/viglink-product-coupons-api-openapi.yml
+- openapi/viglink-reports-api-openapi.yml
+docs: https://developer.sovrn.com/docs/authorization
+description: >-
+  Every Sovrn Commerce (formerly VigLink) API authenticates with a static, per-SITE
+  API key. There is no OAuth, no OIDC, no mTLS, and no token exchange anywhere in the
+  estate. Two key materials exist and they are not interchangeable: a SECRET key sent
+  in the Authorization header for the authenticated data APIs and the MCP server, and
+  a PUBLIC Commerce API key sent as a `key` query parameter on the link/bid check
+  surface and embedded in the client-side JavaScript snippet.
 summary:
   types:
   - apiKey
   api_key_in:
   - header
+  - query
+  oauth2: false
+  openid_connect: false
+  mutual_tls: false
+  scopes: false
+  scopes_note: >-
+    No OAuth scope surface exists, so no scopes/ artifact is emitted. Authorization is
+    all-or-nothing per site key.
 schemes:
-- name: sec0
-  type: apiKey
-  in: header
-  parameter: authorization
-  sources:
-  - openapi/viglink-campaigns-openapi.yml
-  - openapi/viglink-price-comparisons-openapi.yml
-  - openapi/viglink-reports-openapi.yml
 - name: SecretKey
   type: apiKey
   in: header
   parameter: Authorization
-  description: 'Authorization header using the Secret Key scheme. Format: "secret {secret key}"'
+  format: secret {SECRET_KEY}
+  description: >-
+    Site Secret Key. The literal word "secret", a single space, then the key. Sovrn's
+    docs call out the space explicitly because omitting it is the common failure.
+  scope: per-site — "There will be different secret keys for different sites within
+    the same account."
+  provisioning:
+    where: https://platform.sovrn.com/commerce/settings
+    steps:
+    - Log into the Sovrn Platform (https://platform.sovrn.com/)
+    - Go to Commerce Settings
+    - Under Actions, click the Key icon to view the API keys for that site
+    - If no secret key exists, click "generate secret key"
+  rotation:
+    supported: true
+    mechanism: >-
+      A "regenerate" link on the same Commerce Settings screen invalidates the previous
+      secret key and issues a new one.
+    breaking: >-
+      Sovrn warns that regenerating immediately breaks every call still using the old
+      key — there is no overlap/grace window and no multi-key support, so rotation is
+      a hard cutover.
+  used_by:
+  - Campaigns API
+  - Real-Time Reports APIs
+  - Merchant Group Summaries APIs
+  - Product Promo Codes API
+  - Price Comparisons API
+  - Commerce MCP Server (https://mcp.sovrn.com/commerce)
   sources:
-  - openapi/viglink-merchant-summaries-openapi.yml
-  - openapi/viglink-product-promo-codes-openapi.yml
+  - openapi/viglink-merchant-group-summaries-api-openapi.yml
+  - openapi/viglink-product-coupons-api-openapi.yml
+  - https://developer.sovrn.com/docs/authorization
+  - https://developer.sovrn.com/docs/mcp
+- name: sec0
+  type: apiKey
+  in: header
+  parameter: authorization
+  description: >-
+    ReadMe-generated scheme name for the same Authorization header contract as
+    SecretKey. The duplicate naming is an artifact of Sovrn's docs tooling, not two
+    different credentials.
+  sources:
+  - openapi/viglink-account-api-openapi.yml
+  - openapi/viglink-sites-api-openapi.yml
+  - openapi/viglink-reports-api-openapi.yml
+- name: CommerceApiKey
+  type: apiKey
+  in: query
+  parameter: key
+  description: >-
+    Public Commerce API key, found on the account page at commerce.sovrn.com and in
+    Site Settings. Passed as a `key` query parameter.
+  public: true
+  public_note: >-
+    This key is embedded in the client-side vglnk.js snippet and in wrapped affiliate
+    link URLs (https://sovrn.co?key=YOUR_API_KEY&u=…), so it is public by design and
+    must not be treated as a secret.
+  used_by:
+  - Link Check API
+  - Bid Check API
+  - Commerce JavaScript library (vglnk)
+  - Affiliate link wrapping (sovrn.co)
+  sources:
+  - https://developer.sovrn.com/reference/link
+  - https://developer.sovrn.com/reference/building-affiliate-links
+transport:
+  tls_minimum: TLS 1.2
+  tls_source: https://www.sovrn.com/about-sovrn/security/
+observed:
+- url: https://viglink.io/v1/reports/transactions
+  unauthenticated_status: 401
+  checked: '2026-08-13'
+- url: https://viglink.io/merchants/rates/summaries/delta
+  unauthenticated_status: 401
+  checked: '2026-08-13'
+- url: https://mcp.sovrn.com/commerce
+  method: POST tools/list
+  unauthenticated_status: 401
+  body: '{"error":"invalid_token"}'
+  checked: '2026-08-13'
+gaps:
+- No OAuth 2.0 / OIDC option for delegated access — a third-party tool acting for a
+  publisher must hold that publisher's long-lived site Secret Key.
+- No scoped or read-only key variant; one key grants the full authenticated surface
+  for its site.
+- No key expiry, and rotation has no overlap window.

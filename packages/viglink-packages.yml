@@ -1,0 +1,97 @@
+generated: '2026-08-13'
+method: searched
+source: https://developer.sovrn.com/docs/configuration-with-javascript
+description: >-
+  First-party client libraries published by VigLink (Sovrn Commerce). Sovrn ships no
+  packages to any public language registry — npm, PyPI, RubyGems, Packagist, Maven
+  Central, NuGet, crates.io and pkg.go.dev were all probed for viglink/sovrn package
+  names and every one returned 404. The only first-party client distribution is the
+  Commerce JavaScript library (vglnk), served unversioned from the Sovrn CDN and
+  installed as a script tag from the publisher's Commerce install page.
+registries_probed:
+- registry: npm
+  queries:
+  - viglink
+  - sovrn
+  - sovrn-commerce
+  - '@sovrn/commerce'
+  - viglink-api
+  result: no first-party package (404 on every name; text search returns no matches)
+- registry: pypi
+  queries:
+  - viglink
+  - sovrn
+  - sovrn-commerce
+  result: no first-party package (404)
+- registry: rubygems
+  queries:
+  - viglink
+  - sovrn
+  result: no first-party package (404)
+- registry: packagist
+  queries:
+  - viglink/viglink
+  - sovrn/sovrn
+  result: no first-party package (404)
+- registry: github
+  queries:
+  - github.com/viglink
+  - github.com/sovrn
+  result: >-
+    Both orgs exist. The public sovrn org publishes only Prebid.js / prebid-server
+    forks and internal tooling (release-to-jira, brickhouse) — advertising-side
+    projects, not Commerce API client libraries. The viglink org publishes no public
+    repositories.
+packages:
+- language: javascript
+  name: vglnk
+  title: Commerce JavaScript library
+  official: true
+  registry: cdn
+  url: https://cdn.viglink.com/api/vglnk.js
+  install: >-
+    HTML script-tag snippet copied from https://commerce.sovrn.com/install (embeds
+    your Commerce API key)
+  version: null
+  published: null
+  version_note: >-
+    Unpinned CDN distribution. The install snippet loads
+    https://cdn.viglink.com/api/vglnk.js with no version segment and the file carries
+    no registry metadata endpoint, so a consumer cannot tell which build they are
+    executing — it floats to whatever Sovrn last deployed. Probed 2026-08-13:
+    HTTP 200, 29,330 bytes.
+  docs:
+  - https://developer.sovrn.com/docs/configuration-with-javascript
+  - https://developer.sovrn.com/docs/javascript-api
+  api:
+  - vglnk.open( url[, target] )
+  - vglnk.link( link )
+  note: >-
+    Auto-monetizes outbound links on a publisher page and exposes a small JS API for
+    programmatic link monetization. Calls the Link Check API at api.viglink.com/api;
+    the api_url option exists so publishers can front it with their own CNAME.
+    Cross-linked from components/viglink-components.yml.
+- language: javascript
+  name: Automated Comparisons library
+  official: true
+  registry: cdn
+  url: null
+  version: null
+  published: null
+  version_note: >-
+    Documented as an embed library but Sovrn publishes no loader URL, version, or
+    registry entry on the public docs page — the snippet is issued per publisher.
+  docs:
+  - https://developer.sovrn.com/docs/comparisons-automated-library
+  note: Price-comparison embed library, distributed as a per-publisher snippet.
+third_party:
+- name: strackr Sovrn Commerce connector
+  url: https://strackr.com/docs/sovrn-commerce
+  official: false
+- name: wecantrack Sovrn/VigLink integration
+  url: https://wecantrack.com/sovrn-viglink-integration/
+  official: false
+notes:
+- >-
+  No server-side SDK exists in any language. Every Commerce API is called directly
+  over HTTPS with a site Secret Key in the Authorization header.

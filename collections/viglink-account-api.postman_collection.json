@@ -1,0 +1,288 @@
+{
+  "item": [
+    {
+      "id": "54ce99ca-7858-40b1-85d6-52473a3b3cd1",
+      "name": "Account",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4993824-c196-4246-8d46-b0d586672653",
+          "name": "Campaign API",
+          "request": {
+            "name": "Campaign API",
+            "description": {
+              "content": "Use this endpoint to get a list of your campaigns, or search for a specific campaign by name or campaignId.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "account",
+                "campaigns",
+                ":search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Lowercase format of response: json or xml"
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "NULL",
+                  "description": "JSON-P callback method name"
+                },
+                {
+                  "disabled": false,
+                  "key": "rowsPerPage",
+                  "value": "100",
+                  "description": "The total number of records to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "When results are greater than rowsPerPage, allows you to grab the next page of results"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "PRIMARY",
+                  "key": "search",
+                  "description": "(Required) Search by campaign name or campaignId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f064d4e5-2521-4d49-b403-842b2359aae9",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "campaigns",
+                    ":search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "NULL"
+                    },
+                    {
+                      "key": "rowsPerPage",
+                      "value": "100"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "PRIMARY",
+                      "key": "search",
+                      "description": "(Required) Search by campaign name or campaignId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\\n{\\n    \\\"campaigns\\\":[\\n        {\\n            \\\"campaignId\\\":9876543,\\n            \\\"apiKey\\\":\\\"098f6bcd4621d373cade4e832627b4f6\\\",\\n            \\\"name\\\":\\\"PRIMARY\\\",\\n            \\\"approvalStatus\\\":\\\"Approved\\\",\\n            \\\"category\\\":\\\"Sports & Fitness\\\",\\n            \\\"platform\\\":\\\"WordPress\\\",\\n            \\\"applicationType\\\":\\\"Blog\\\"\\n        },\\n        {\\n            \\\"campaignId\\\":9876544,\\n            \\\"apiKey\\\":\\\"fb469d7ef430b0baf0cab6c436e70375\\\",\\n            \\\"name\\\":\\\"apparelblog.com\\\",\\n            \\\"approvalStatus\\\":\\\"Approved\\\",\\n            \\\"category\\\":\\\"Apparel & Accessories\\\",\\n            \\\"platform\\\":\\\"WordPress\\\",\\n            \\\"applicationType\\\":\\\"Blog\\\"\\n        },\\n    ]\\n}\\n\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70f19e09-0efc-42cc-b924-ae3200eec9f6",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "campaigns",
+                    ":search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "NULL"
+                    },
+                    {
+                      "key": "rowsPerPage",
+                      "value": "100"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "PRIMARY",
+                      "key": "search",
+                      "description": "(Required) Search by campaign name or campaignId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"error\\\": {\\n        \\\"errors\\\": [\\n            {\\n                \\\"reason\\\": \\\"invalidCredentials\\\",\\n                \\\"message\\\": \\\"Authorization secret is missing or invalid. This can be found at https://publishers.viglink.com/account and can be sent as a parameter or Authorization header\\\",\\n                \\\"locationType\\\": \\\"parameter\\\",\\n                \\\"location\\\": \\\"secret\\\"\\n            }\\n        ]\\n    },\\n    \\\"code\\\": 401,\\n    \\\"message\\\": \\\"Authorization secret is missing or invalid. This can be found at https://publishers.viglink.com/account and can be sent as a parameter or Authorization header\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f2494b5-3322-4481-ab5c-0305ac02683b",
+              "name": "500",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account",
+                    "campaigns",
+                    ":search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "NULL"
+                    },
+                    {
+                      "key": "rowsPerPage",
+                      "value": "100"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "PRIMARY",
+                      "key": "search",
+                      "description": "(Required) Search by campaign name or campaignId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"error\\\": {\\n        \\\"errors\\\": [\\n            {\\n                \\\"reason\\\": \\\"internalServerError\\\",\\n                \\\"message\\\": \\\"An unexpected error occurred, but we are looking into it\\\"\\n            }\\n        ]\\n    },\\n    \\\"code\\\": 500,\\n    \\\"message\\\": \\\"An unexpected error occurred, but we are looking into it\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.viglink.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a11d032c-2794-416a-912b-a1640d6b6ec9",
+    "name": "Bid Check Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

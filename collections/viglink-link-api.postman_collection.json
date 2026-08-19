@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "4073a4aa-2587-4845-9a95-49eaad4cec4e",
+      "name": "Link",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dcd67663-0df5-4296-937e-4994ee553160",
+          "name": "Link check API",
+          "request": {
+            "name": "Link check API",
+            "description": {
+              "content": "Get information on whether a specific URL can be monetized",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "link",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "<string>",
+                  "description": "(Required) The URL to be tested for monetization"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Commerce Api Key. This is found by logging into your account at https://commerce.sovrn.com and navigating to Sites. The API key field for the domain you wish to use should be entered here."
+                },
+                {
+                  "disabled": false,
+                  "key": "optimize",
+                  "value": "true",
+                  "description": "Option on if the link can be optimized"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "We should always use `json`"
+                },
+                {
+                  "disabled": false,
+                  "key": "geo",
+                  "value": "<string>",
+                  "description": "Country code that can be passed in for affiliation testing"
+                },
+                {
+                  "disabled": false,
+                  "key": "fbu",
+                  "value": "<string>",
+                  "description": "Fallback url to go if out url can't beat the bid floor"
+                },
+                {
+                  "disabled": false,
+                  "key": "bf",
+                  "value": "<string>",
+                  "description": "Bid floor for the fallback url"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "716a194d-af92-458f-9134-0f63ee416d5c",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "link",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "out",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "optimize",
+                      "value": "true"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "geo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fbu",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bf",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"url\\\": \\\"https://www.walmart.com/ip/105218827\\\",\\n    \\\"optimized\\\": \\\"https://redirect.viglink.com?key={YOUR API KEY&u=https%3A%2F%2Fwww.walmart.com%2Fip%2F105218827&prodOvrd=RAL\\\",\\n    \\\"affiliatable\\\": false,\\n    \\\"competitive\\\": null,\\n    \\\"optimizable\\\": null,\\n    \\\"eepc\\\": 0.0702\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ff97fe0-70f2-4e52-950e-9c241ca63e11",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "link",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "out",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "optimize",
+                      "value": "true"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "geo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fbu",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bf",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"status\\\": 400,\\n    \\\"message\\\": \\\"Parameter 'key' is required.\\\",\\n    \\\"error\\\": \\\"Bad Request\\\",\\n    \\\"exception\\\": \\\"com.viglink.common.exception.ValidationException\\\",\\n    \\\"timestamp\\\": 1608665790151\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.viglink.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1975270b-84e9-426d-bcf2-aeab3f6591d4",
+    "name": "Bid Check Account Link API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

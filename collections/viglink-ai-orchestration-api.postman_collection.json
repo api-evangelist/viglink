@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "93183d91-f6d8-459e-91cd-173c6ba639e4",
+      "name": "Ai Orchestration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57fb68b3-2b5f-47e2-a8f7-775b146337f5",
+          "name": "Get Product Recommendations",
+          "request": {
+            "name": "Get Product Recommendations",
+            "description": {},
+            "url": {
+              "path": [
+                "ai-orchestration",
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<string>",
+                  "description": "(Required) Your Sovrn Commerce API key. Found in the Sovrn Platform under Site Settings or via the Campaigns API."
+                },
+                {
+                  "disabled": false,
+                  "key": "market",
+                  "value": "<string>",
+                  "description": "Market in the format currency_language (e.g., usd_en). Inferred from IP if not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "cuid",
+                  "value": "<string>",
+                  "description": "Custom tracking ID for associating recommendations with a specific user, session, or page."
+                },
+                {
+                  "disabled": false,
+                  "key": "priceRange",
+                  "value": "<string>",
+                  "description": "Price filter using \"min-max\" format, e.g., \"20-50\" or \"*-25\"."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeMerchants",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant IDs to include. Only one of includeMerchants or excludeMerchants may be used."
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeMerchants",
+                  "value": "<string>",
+                  "description": "Comma separated list of merchant IDs to exclude. Only one of includeMerchants or excludeMerchants may be used."
+                },
+                {
+                  "disabled": false,
+                  "key": "numProducts",
+                  "value": "4",
+                  "description": "Number of products to return. Default: 4, Max: 50."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageUrl",
+                  "value": "<string>",
+                  "description": "(Required) The URL or key of the content you want recommendations for. See the 'Caching' section above for more information."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "955edb41-02ea-40fc-9697-6a5a3f0b29c8",
+              "name": "A list of recommended products.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ai-orchestration",
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "market",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "priceRange",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeMerchants",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "excludeMerchants",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "numProducts",
+                      "value": "4"
+                    },
+                    {
+                      "key": "pageUrl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9497,\n    \"name\": \"string\",\n    \"imageURL\": \"string\",\n    \"thumbnailURL\": \"string\",\n    \"currency\": \"string\",\n    \"salePrice\": 6999.122106747977,\n    \"retailPrice\": 5474.054206295589,\n    \"discountRate\": 8507.855417766756,\n    \"inStock\": true,\n    \"affiliatable\": false,\n    \"deepLink\": \"string\"\n  },\n  {\n    \"id\": 2371,\n    \"name\": \"string\",\n    \"imageURL\": \"string\",\n    \"thumbnailURL\": \"string\",\n    \"currency\": \"string\",\n    \"salePrice\": 6503.802867178908,\n    \"retailPrice\": 6310.082538048978,\n    \"discountRate\": 4973.550970165117,\n    \"inStock\": false,\n    \"affiliatable\": false,\n    \"deepLink\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shopping-gallery.prd-commerce.sovrnservices.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1e639be2-fe52-4f44-8960-a79daee7f543",
+    "name": "Bid Check Account Ai Orchestration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.\n\nPartners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn's bid, you can decide whether to route the click through Sovrn or through another network.\n\nFor CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn's revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.\n\n**Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe \"Try It\" panel will encode them automatically.\n",
+      "type": "text/plain"
+    }
+  }
+}

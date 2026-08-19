@@ -3,9 +3,8 @@ method: searched
 source: https://developer.sovrn.com/docs/mcp
 status: published
 name: Commerce MCP Server (Sovrn Commerce, formerly VigLink)
-description: Official hosted Commerce MCP server (beta) that connects affiliate
-  data, campaigns, and products directly to AI tools — affiliate search, reporting,
-  and link generation through natural language.
+description: Official hosted Commerce MCP server (beta) that connects affiliate data, campaigns, and products
+  directly to AI tools — affiliate search, reporting, and link generation through natural language.
 server:
   name: Commerce MCP Server
   transport: http
@@ -16,9 +15,9 @@ server:
     format: secret {SECRET_KEY}
     docs: https://developer.sovrn.com/docs/authorization
 rate_limits:
-  note: Rate limits are enforced by the underlying Sovrn Commerce APIs per tool,
-    not by the MCP server itself. Reporting/transaction tools are typically limited
-    to 1 request per 60 seconds; search and recommendation tools allow higher throughput.
+  note: Rate limits are enforced by the underlying Sovrn Commerce APIs per tool, not by the MCP server
+    itself. Reporting/transaction tools are typically limited to 1 request per 60 seconds; search and
+    recommendation tools allow higher throughput.
 tools:
 - name: comp_search_prices
   description: Search affiliated product prices
@@ -51,3 +50,39 @@ resources:
 - name: get_campaigns
   description: Retrieve active campaigns and metadata
 demos: https://developer.sovrn.com/docs/mcp-demos
+deployment:
+  mode: remote
+  endpoint: https://mcp.sovrn.com/commerce
+  install: null
+  package: null
+  auth: api-key
+  auth_detail: >-
+    Static site Secret Key in the Authorization header, formatted "secret {SECRET_KEY}".
+    No OAuth: /.well-known/oauth-authorization-server and
+    /.well-known/oauth-protected-resource both 404 on mcp.sovrn.com.
+  verified: probed
+  probe: gated
+  probe_detail:
+    method: tools/list
+    http_status: 401
+    body: '{"error":"invalid_token"}'
+    note: >-
+      The server answers unauthenticated tools/list with an OAuth-style invalid_token
+      error even though it authenticates with a static key, so the live tool schemas
+      cannot be introspected anonymously. The tool list recorded above is the one Sovrn
+      publishes at https://developer.sovrn.com/docs/mcp — names and descriptions only,
+      no inputSchema. See mcp/viglink-tool-crosswalk.yml.
+  checked: '2026-08-13'
+  source: https://developer.sovrn.com/docs/mcp + live probe of https://mcp.sovrn.com/commerce
+client_config: |
+  {
+    "mcpServers": {
+      "Commerce MCP Server": {
+        "url": "https://mcp.sovrn.com/commerce",
+        "headers": {
+          "Authorization": "secret {SECRET_KEY}"
+        }
+      }
+    }
+  }
+crosswalk: mcp/viglink-tool-crosswalk.yml

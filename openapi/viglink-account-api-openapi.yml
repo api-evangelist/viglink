@@ -16,7 +16,7 @@ info:
     '
   x-source: https://developer.sovrn.com/llms.txt (per-endpoint OpenAPI definitions, harvested 2026-07-21)
 servers:
-- url: https://api.viglink.com
+- url: https://rest.viglink.com/api
   description: Production
 tags:
 - name: Account

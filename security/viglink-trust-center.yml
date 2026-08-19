@@ -1,0 +1,70 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.sovrn.com/trust-center/
+description: >-
+  Sovrn — the operator of VigLink / Sovrn Commerce — publishes a Trust Center on its
+  corporate domain, plus a separate public security-program page. One industry
+  certification is named (TAG Platinum); no SOC 2, ISO 27001, PCI DSS or HIPAA
+  attestation is named or offered for download on either page.
+trust_center:
+  url: https://www.sovrn.com/trust-center/
+  http_status: 200
+  self_serve_document_access: false
+  note: >-
+    Link hub rather than a document portal — it routes to legal, privacy and security
+    pages rather than gating downloadable audit reports behind an NDA request form.
+security_page:
+  url: https://www.sovrn.com/about-sovrn/security/
+  http_status: 200
+certifications:
+- name: TAG Platinum
+  body: Trustworthy Accountability Group
+  status: maintained
+  evidence: >-
+    "Sovrn maintains Trustworthy Accountability Group (TAG) Platinum status."
+  source: https://www.sovrn.com/about-sovrn/security/
+compliance_programs:
+- name: GDPR
+  artifacts:
+  - Data Processing Addendum (Sovrn as Data Importer)
+  - Standard Contractual Clause Selections and Addendum
+  source: https://www.sovrn.com/trust-center/
+- name: CCPA
+  artifacts:
+  - CCPA Metrics
+  url: https://www.sovrn.com/privacy-policy/ccpa-metrics/
+  source: https://www.sovrn.com/trust-center/
+subprocessors:
+  published: true
+  url: https://www.sovrn.com/legal/subprocessors/
+policies:
+- name: Privacy Policy
+  url: https://www.sovrn.com/privacy-policy/privacy-policy/
+- name: Cookie Statement
+  url: https://www.sovrn.com/privacy-policy/about-our-cookies/
+- name: Law Enforcement Request Policy
+  url: https://www.sovrn.com/privacy-policy/law-enforcement-request-policy/
+- name: Your Privacy Choices
+  url: https://www.sovrn.com/privacy-policy/policy-center/
+- name: Responsible Disclosure Policy
+  url: https://www.sovrn.com/responsible-disclosure-policy/
+security_practices_published:
+- Threat modeling during project stages
+- Manual code review and automated scanning
+- TLS 1.2 or higher in transit
+- Multi-factor authentication for production environments
+- NIST-aligned password requirements
+- Penetration testing program
+- Encryption key management
+not_published:
+- SOC 2 Type I or Type II report
+- ISO/IEC 27001 certificate
+- PCI DSS attestation
+- HIPAA / FedRAMP
+- Downloadable audit evidence or an NDA-gated document portal
+- Real-time uptime/security posture feed
+gaps:
+- >-
+  The security page states Sovrn has "a dedicated compliance team responsible for data
+  privacy oversight and our industry certifications" but names only TAG Platinum —
+  no other certification is identified anywhere on the public trust surface.

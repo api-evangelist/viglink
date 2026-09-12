@@ -23,6 +23,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "viglink-account-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-ai-orchestration-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-bid-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-link-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-merchant-group-summaries-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-product-coupons-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-reports-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "viglink-sites-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

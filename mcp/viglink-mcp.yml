@@ -53,36 +53,10 @@ demos: https://developer.sovrn.com/docs/mcp-demos
 deployment:
   mode: remote
   endpoint: https://mcp.sovrn.com/commerce
-  install: null
-  package: null
-  auth: api-key
-  auth_detail: >-
-    Static site Secret Key in the Authorization header, formatted "secret {SECRET_KEY}".
-    No OAuth: /.well-known/oauth-authorization-server and
-    /.well-known/oauth-protected-resource both 404 on mcp.sovrn.com.
   verified: probed
   probe: gated
-  probe_detail:
-    method: tools/list
-    http_status: 401
-    body: '{"error":"invalid_token"}'
-    note: >-
-      The server answers unauthenticated tools/list with an OAuth-style invalid_token
-      error even though it authenticates with a static key, so the live tool schemas
-      cannot be introspected anonymously. The tool list recorded above is the one Sovrn
-      publishes at https://developer.sovrn.com/docs/mcp — names and descriptions only,
-      no inputSchema. See mcp/viglink-tool-crosswalk.yml.
-  checked: '2026-08-13'
-  source: https://developer.sovrn.com/docs/mcp + live probe of https://mcp.sovrn.com/commerce
-client_config: |
-  {
-    "mcpServers": {
-      "Commerce MCP Server": {
-        "url": "https://mcp.sovrn.com/commerce",
-        "headers": {
-          "Authorization": "secret {SECRET_KEY}"
-        }
-      }
-    }
-  }
+  checked: '2026-08-12'
+  source: catalog MCP census
+client_config: "{\n  \"mcpServers\": {\n    \"Commerce MCP Server\": {\n      \"url\": \"https://mcp.sovrn.com/commerce\"\
+  ,\n      \"headers\": {\n        \"Authorization\": \"secret {SECRET_KEY}\"\n      }\n    }\n  }\n}\n"
 crosswalk: mcp/viglink-tool-crosswalk.yml

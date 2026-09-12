@@ -366,3 +366,5 @@ x-enrichment:
   status: enriched
   artifacts_added: 5
   pass: local-v1
+x-parent: sovrn
+x-relationship: product

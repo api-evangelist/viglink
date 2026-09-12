@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Bid Check Account Product Coupons API
   version: 1.0.0
@@ -139,27 +139,6 @@ paths:
           description: Internal server error.
 components:
   schemas:
-    Merchant:
-      type: object
-      required:
-      - domain
-      - group_id
-      - group_name
-      properties:
-        domain:
-          type: string
-          example: kiehls.com
-        group_id:
-          type: integer
-          format: int64
-          example: 2528
-        group_name:
-          type: string
-          example: Kiehl's
-        logo_url:
-          type: string
-          format: url
-          nullable: true
     ProductCouponsResponse:
       type: object
       required:
@@ -178,6 +157,47 @@ components:
             '
           items:
             $ref: '#/components/schemas/Coupon'
+    Scan:
+      type: object
+      required:
+      - verification_active
+      - when_to_check_back
+      properties:
+        verification_active:
+          type: boolean
+          description: 'Indicates whether coupon verification is currently running.
+
+            '
+          example: false
+        when_to_check_back:
+          type: integer
+          format: int32
+          description: 'Recommended delay (in seconds) before polling again.
+
+            '
+          example: 3600
+    Merchant:
+      type: object
+      required:
+      - domain
+      - group_id
+      - group_name
+      properties:
+        domain:
+          type: string
+          example: kiehls.com
+        group_id:
+          type: integer
+          format: int64
+          example: 2528
+        group_name:
+          type: string
+          example: Kiehl's
+        logo_url:
+          type:
+          - string
+          - 'null'
+          format: url
     Coupon:
       type: object
       required:
@@ -202,15 +222,17 @@ components:
 
             '
         original_price:
-          type: number
+          type:
+          - number
+          - 'null'
           format: double
-          nullable: true
           description: Original product price.
           example: 52
         price_with_code:
-          type: number
+          type:
+          - number
+          - 'null'
           format: double
-          nullable: true
           description: 'Final price after applying the code. May be null while verification is in progress.
 
             '
@@ -224,35 +246,18 @@ components:
           description: Whether the code has been verified to work.
           example: true
         verified_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
           description: 'Timestamp when the code was last verified. May be null if not yet verified.
 
             '
           example: '2026-02-06T15:18:11.746Z'
         code_description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: 'Best-effort description of the promotion. May be null or inaccurate.
 
             '
-    Scan:
-      type: object
-      required:
-      - verification_active
-      - when_to_check_back
-      properties:
-        verification_active:
-          type: boolean
-          description: 'Indicates whether coupon verification is currently running.
-
-            '
-          example: false
-        when_to_check_back:
-          type: integer
-          format: int32
-          description: 'Recommended delay (in seconds) before polling again.
-
-            '
-          example: 3600

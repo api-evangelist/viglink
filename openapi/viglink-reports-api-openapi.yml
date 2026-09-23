@@ -1,30 +1,21 @@
 openapi: 3.2.0
 info:
-  title: Bid Check Account Reports API
-  version: 1.0.0
-  description: 'Use Bid Check during the click redirect flow to request a real-time bid from Sovrn for a destination URL. When Sovrn can monetize the click, Bid Check returns a redirect URL that you can use to redirect the user.
-
-
-    Partners typically use Bid Check when comparing offers from multiple affiliate networks in real time. After receiving Sovrn''s bid, you can decide whether to route the click through Sovrn or through another network.
-
-
-    For CPC bids, the returned `eepc` is the rate you can earn by routing the click through Sovrn before the bid expires. Sovrn''s revenue share has already been deducted from this value. For CPA offers, `eepc` is the average amount Sovrn expects you to earn per click and is not guaranteed for an individual click.
-
-
-    **Note on URL encoding:** query parameter values, especially `out`, `userAgent`, `referrerUrl`, `subId`, and tracking values that contain spaces or reserved characters, must be URL-encoded when constructing the request. The `example` values below show the raw decoded form; your HTTP client or the ReadMe "Try It" panel will encode them automatically.
-
-    '
+  title: Commerce Real-Time Reports API
+  description: Transaction Reporting Service (TRS) provides Reporting APIs.
+  termsOfService: http://sovrn.io/terms/
+  version: '20230630'
   x-source: https://developer.sovrn.com/llms.txt (per-endpoint OpenAPI definitions, harvested 2026-07-21)
 servers:
 - url: https://viglink.io/v1
-  description: Production
+security:
+- bearerAuth: []
 tags:
-- name: reports
+- name: Reports
 paths:
   /reports/transactions:
     get:
       tags:
-      - reports
+      - Reports
       summary: Transactions
       description: This endpoint is used to query all commission events (transactions) that have occurred or been updated on a specified date. This data can be used to see individual link performance, actualized earnings, individual site performance and more, all in real-time.
       parameters:
@@ -87,10 +78,12 @@ paths:
                 $ref: '#/components/schemas/TransactionsResponseModel'
         '400':
           description: Invalid status value
+      operationId: getReportsTransactions
+      x-operation-id-source: derived
   /reports/merchants:
     get:
       tags:
-      - reports
+      - Reports
       summary: Merchants
       description: This endpoint is used to query aggregated performance metrics by Merchant. This data can be used to see individual merchant performance, your top performing merchants, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.
       parameters:
@@ -238,10 +231,12 @@ paths:
           description: Merchant data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsMerchants
+      x-operation-id-source: derived
   /reports/merchantsbydate:
     get:
       tags:
-      - reports
+      - Reports
       summary: Merchants By Date
       description: This endpoint is used to query aggregated performance metrics by Merchant and Date. This data can be used to see individual merchant performance by day, your top performing merchants, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.
       parameters:
@@ -389,10 +384,12 @@ paths:
           description: Merchant data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsMerchantsbydate
+      x-operation-id-source: derived
   /reports/links:
     get:
       tags:
-      - reports
+      - Reports
       summary: Links
       description: This endpoint is used to query aggregated performance metrics by Link. This data can be used to see individual merchant link performance, your top performing merchant links, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.
       parameters:
@@ -540,10 +537,12 @@ paths:
           description: Links data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsLinks
+      x-operation-id-source: derived
   /reports/pages:
     get:
       tags:
-      - reports
+      - Reports
       summary: Pages
       description: This endpoint is used to query aggregated performance metrics by Page. This data can be used to see individual page performance, your top performing pages, actualized earnings, and more, all in real-time. Metrics include Pageviews, RPM, Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.
       parameters:
@@ -691,10 +690,12 @@ paths:
           description: Page data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsPages
+      x-operation-id-source: derived
   /reports/merchandise:
     get:
       tags:
-      - reports
+      - Reports
       summary: Merchandise
       description: This endpoint is used to query aggregated performance metrics by Merchandise. This data can be used to see individual product performance, your top performing products, actualized earnings, and more, all in real-time. Metrics include Revenue, Sales, and Actions.
       parameters:
@@ -842,10 +843,12 @@ paths:
           description: Merchandise data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsMerchandise
+      x-operation-id-source: derived
   /reports/networks:
     get:
       tags:
-      - reports
+      - Reports
       summary: Networks
       description: This endpoint is used to query aggregated performance metrics by Network. This data can be used to see connected Network performance, your top performing Networks, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions and EPC.
       parameters:
@@ -993,10 +996,12 @@ paths:
           description: Network data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsNetworks
+      x-operation-id-source: derived
   /reports/cuids:
     get:
       tags:
-      - reports
+      - Reports
       summary: CUIDs
       description: This endpoint is used to query aggregated performance metrics by CUID. This data can be used to see individual CUID performance, your top performing CUIDs, actualized earnings, and more, all in real-time. Metrics include Revenue, Clicks, Sales, Actions, Conversion Rate and EPC.
       parameters:
@@ -1144,9 +1149,25 @@ paths:
           description: Page data not found
         5XX:
           description: Unexpected error
+      operationId: getReportsCuids
+      x-operation-id-source: derived
 components:
   schemas:
-    LinksResponseModel:
+    DeviceTypeModel:
+      type: string
+      enum:
+      - DSK
+      - MBL
+      - TBL
+      - UKN
+    TransactionsResponseModel:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionModel'
+    NetworkResponseModel:
       type: object
       properties:
         data:
@@ -1156,15 +1177,11 @@ components:
             - $ref: '#/components/schemas/BaseResponseModel'
             - type: object
               properties:
-                linkUrl:
-                  type: string
-                linkText:
+                networkName:
                   type: string
         totals:
           properties:
-            linkUrlTotal:
-              type: number
-            linkTextTotal:
+            networkNameTotal:
               type: number
             revenueTotal:
               type: number
@@ -1177,6 +1194,84 @@ components:
             conversionRateTotal:
               type: number
             epcTotal:
+              type: number
+    BaseResponseModel:
+      type: object
+      properties:
+        revenue:
+          type: number
+        clicks:
+          type: number
+        sales:
+          type: number
+        actions:
+          type: number
+        conversionRate:
+          type: number
+        epc:
+          type: number
+    LinkUtmInfoModel:
+      type: object
+      properties:
+        utmSource:
+          type: string
+        utmMedium:
+          type: string
+        utmCampaign:
+          type: string
+        utmTerm:
+          type: string
+        utmContent:
+          type: string
+    ProductModel:
+      type: object
+      properties:
+        productId:
+          type: string
+        productName:
+          type: string
+        price:
+          type: number
+          format: float
+          example: 100.99
+        quantity:
+          type: number
+          example: 10
+    MerchandiseResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              productName:
+                type: string
+              merchantGroupName:
+                type: string
+              merchantGroupId:
+                type: integer
+                format: int64
+              revenue:
+                type: number
+              sales:
+                type: number
+              actions:
+                type: number
+        totals:
+          type: object
+          properties:
+            productNameTotal:
+              type: number
+            merchantGroupNameTotal:
+              type: number
+            merchantGroupIdsTotal:
+              type: number
+            revenueTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
               type: number
     MerchantsResponseModel:
       type: object
@@ -1213,6 +1308,38 @@ components:
               type: number
             merchantGroupNameTotal:
               type: number
+    LinksResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/BaseResponseModel'
+            - type: object
+              properties:
+                linkUrl:
+                  type: string
+                linkText:
+                  type: string
+        totals:
+          properties:
+            linkUrlTotal:
+              type: number
+            linkTextTotal:
+              type: number
+            revenueTotal:
+              type: number
+            clicksTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+            conversionRateTotal:
+              type: number
+            epcTotal:
+              type: number
     SovrnProductModel:
       type: string
       enum:
@@ -1229,19 +1356,6 @@ components:
       - SHG
       - PRF
     PageUtmInfoModel:
-      type: object
-      properties:
-        utmSource:
-          type: string
-        utmMedium:
-          type: string
-        utmCampaign:
-          type: string
-        utmTerm:
-          type: string
-        utmContent:
-          type: string
-    LinkUtmInfoModel:
       type: object
       properties:
         utmSource:
@@ -1290,45 +1404,6 @@ components:
             merchantGroupIdsTotal:
               type: number
             merchantGroupNameTotal:
-              type: number
-    PagesResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/BaseResponseModel'
-            - type: object
-              properties:
-                pageUrl:
-                  type: string
-                pageviews:
-                  type: number
-                rpm:
-                  type: number
-        totals:
-          type: object
-          properties:
-            revenueTotal:
-              type: number
-            clicksTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-            conversionRateTotal:
-              type: number
-            epcTotal:
-              type: number
-            ctrTotal:
-              type: number
-            rpmTotal:
-              type: number
-            pageUrlTotal:
-              type: number
-            pageviewsTotal:
               type: number
     TransactionModel:
       type: object
@@ -1388,36 +1463,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProductModel'
-    ProductModel:
-      type: object
-      properties:
-        productId:
-          type: string
-        productName:
-          type: string
-        price:
-          type: number
-          format: float
-          example: 100.99
-        quantity:
-          type: number
-          example: 10
-    BaseResponseModel:
-      type: object
-      properties:
-        revenue:
-          type: number
-        clicks:
-          type: number
-        sales:
-          type: number
-        actions:
-          type: number
-        conversionRate:
-          type: number
-        epc:
-          type: number
-    NetworkResponseModel:
+    PagesResponseModel:
       type: object
       properties:
         data:
@@ -1427,12 +1473,15 @@ components:
             - $ref: '#/components/schemas/BaseResponseModel'
             - type: object
               properties:
-                networkName:
+                pageUrl:
                   type: string
+                pageviews:
+                  type: number
+                rpm:
+                  type: number
         totals:
+          type: object
           properties:
-            networkNameTotal:
-              type: number
             revenueTotal:
               type: number
             clicksTotal:
@@ -1444,6 +1493,14 @@ components:
             conversionRateTotal:
               type: number
             epcTotal:
+              type: number
+            ctrTotal:
+              type: number
+            rpmTotal:
+              type: number
+            pageUrlTotal:
+              type: number
+            pageviewsTotal:
               type: number
     CuidsResponseModel:
       type: object
@@ -1474,53 +1531,14 @@ components:
               type: number
             epcTotal:
               type: number
-    TransactionsResponseModel:
-      type: object
-      properties:
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionModel'
-    MerchandiseResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              productName:
-                type: string
-              merchantGroupName:
-                type: string
-              merchantGroupId:
-                type: integer
-                format: int64
-              revenue:
-                type: number
-              sales:
-                type: number
-              actions:
-                type: number
-        totals:
-          type: object
-          properties:
-            productNameTotal:
-              type: number
-            merchantGroupNameTotal:
-              type: number
-            merchantGroupIdsTotal:
-              type: number
-            revenueTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-    DeviceTypeModel:
-      type: string
-      enum:
-      - DSK
-      - MBL
-      - TBL
-      - UKN
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: authorization
+      in: header
+externalDocs:
+  description: Find out more Transaction Reporting Services
+  url: https://authcore.atlassian.net/l/cp/G5HL5km5
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true

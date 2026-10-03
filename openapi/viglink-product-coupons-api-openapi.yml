@@ -147,46 +147,6 @@ components:
 
             '
           example: 3600
-    Merchant:
-      type: object
-      required:
-      - domain
-      - group_id
-      - group_name
-      properties:
-        domain:
-          type: string
-          example: kiehls.com
-        group_id:
-          type: integer
-          format: int64
-          example: 2528
-        group_name:
-          type: string
-          example: Kiehl's
-        logo_url:
-          type:
-          - string
-          - 'null'
-          format: url
-    ProductCouponsResponse:
-      type: object
-      required:
-      - merchant
-      - scan
-      - coupons
-      properties:
-        merchant:
-          $ref: '#/components/schemas/Merchant'
-        scan:
-          $ref: '#/components/schemas/Scan'
-        coupons:
-          type: array
-          description: 'Ranked list of coupon codes. Verified coupons appear first, followed by unverified codes.
-
-            '
-          items:
-            $ref: '#/components/schemas/Coupon'
     Coupon:
       type: object
       required:
@@ -250,6 +210,46 @@ components:
           description: 'Best-effort description of the promotion. May be null or inaccurate.
 
             '
+    ProductCouponsResponse:
+      type: object
+      required:
+      - merchant
+      - scan
+      - coupons
+      properties:
+        merchant:
+          $ref: '#/components/schemas/Merchant'
+        scan:
+          $ref: '#/components/schemas/Scan'
+        coupons:
+          type: array
+          description: 'Ranked list of coupon codes. Verified coupons appear first, followed by unverified codes.
+
+            '
+          items:
+            $ref: '#/components/schemas/Coupon'
+    Merchant:
+      type: object
+      required:
+      - domain
+      - group_id
+      - group_name
+      properties:
+        domain:
+          type: string
+          example: kiehls.com
+        group_id:
+          type: integer
+          format: int64
+          example: 2528
+        group_name:
+          type: string
+          example: Kiehl's
+        logo_url:
+          type:
+          - string
+          - 'null'
+          format: url
   securitySchemes:
     SecretKey:
       type: apiKey

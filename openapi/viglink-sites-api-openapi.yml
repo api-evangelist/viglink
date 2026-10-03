@@ -45,19 +45,6 @@ paths:
       operationId: getSitesBySiteApiKeyComparePricesByMarketByAccuracy
       x-operation-id-source: derived
 components:
-  responses:
-    BadRequest:
-      description: A Bad Request status code will be returned if provided parameters are malformed.
-      content:
-        '*/*':
-          schema:
-            $ref: '#/components/schemas/Error'
-    Error:
-      description: For any unexpected error a status code 500 will be returned.
-      content:
-        '*/*':
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -157,22 +144,6 @@ components:
         name: Asda George
         logo: https://cdn.imgwzzmb.net/image/merchant/logo/aw/asda_george_88x31.jpeg
   parameters:
-    EpcSort:
-      name: epc-sort
-      in: query
-      required: false
-      description: 'Sort results by EPC. If true the results will be sorted by EPC otherwise default sorting will be used.
-
-        '
-      schema:
-        type: boolean
-    SiteApiKey:
-      name: site-api-key
-      in: path
-      required: true
-      description: The unique identifier of the publishers site.
-      schema:
-        type: string
     Sid:
       name: sid
       in: query
@@ -186,6 +157,26 @@ components:
         '
       schema:
         type: string
+    EpcSort:
+      name: epc-sort
+      in: query
+      required: false
+      description: 'Sort results by EPC. If true the results will be sorted by EPC otherwise default sorting will be used.
+
+        '
+      schema:
+        type: boolean
+    OptionalPlainlink:
+      name: plainlink
+      in: query
+      required: false
+      description: 'The link of the product web page in a merchant''s site.
+
+        **Note**: the link must be plain, if you provide a tracked link the service may not work.
+
+        '
+      schema:
+        type: string
     ExcludeKeywords:
       name: exclude-keywords
       in: query
@@ -195,24 +186,6 @@ components:
         Any result matching any of the provided keywords will be stripped out from the results.
 
         For example: ''Dickies hat red'' or ''iPhone 10''.
-
-        '
-      schema:
-        type: string
-    Market:
-      name: market
-      in: path
-      required: true
-      description: "The market where to perform the search. Read the market section for the list of supported markets.\nFor example: 'usd_en' for the US market. \n"
-      schema:
-        type: string
-    OptionalSearchKeywords:
-      name: search-keywords
-      in: query
-      required: false
-      description: 'List of keywords to search in the product name, **separated by space**.
-
-        For example: ''Dickies hat red'' or ''iPhone X''.
 
         '
       schema:
@@ -232,24 +205,6 @@ components:
         '
       schema:
         type: string
-    OptionalPlainlink:
-      name: plainlink
-      in: query
-      required: false
-      description: 'The link of the product web page in a merchant''s site.
-
-        **Note**: the link must be plain, if you provide a tracked link the service may not work.
-
-        '
-      schema:
-        type: string
-    OptionalBarcode:
-      name: barcode
-      in: query
-      required: false
-      description: 'The barcode of the product to search, can be one of: UPC,EAN,GTIN,ISBN,ASIN.'
-      schema:
-        type: string
     Limit:
       name: limit
       in: query
@@ -261,6 +216,51 @@ components:
         '
       schema:
         type: integer
+    SiteApiKey:
+      name: site-api-key
+      in: path
+      required: true
+      description: The unique identifier of the publishers site.
+      schema:
+        type: string
+    OptionalSearchKeywords:
+      name: search-keywords
+      in: query
+      required: false
+      description: 'List of keywords to search in the product name, **separated by space**.
+
+        For example: ''Dickies hat red'' or ''iPhone X''.
+
+        '
+      schema:
+        type: string
+    OptionalBarcode:
+      name: barcode
+      in: query
+      required: false
+      description: 'The barcode of the product to search, can be one of: UPC,EAN,GTIN,ISBN,ASIN.'
+      schema:
+        type: string
+    Market:
+      name: market
+      in: path
+      required: true
+      description: "The market where to perform the search. Read the market section for the list of supported markets.\nFor example: 'usd_en' for the US market. \n"
+      schema:
+        type: string
+  responses:
+    Error:
+      description: For any unexpected error a status code 500 will be returned.
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: A Bad Request status code will be returned if provided parameters are malformed.
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

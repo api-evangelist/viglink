@@ -1153,6 +1153,38 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    LinksResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/BaseResponseModel'
+            - type: object
+              properties:
+                linkUrl:
+                  type: string
+                linkText:
+                  type: string
+        totals:
+          properties:
+            linkUrlTotal:
+              type: number
+            linkTextTotal:
+              type: number
+            revenueTotal:
+              type: number
+            clicksTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+            conversionRateTotal:
+              type: number
+            epcTotal:
+              type: number
     BaseResponseModel:
       type: object
       properties:
@@ -1168,6 +1200,178 @@ components:
           type: number
         epc:
           type: number
+    SovrnProductModel:
+      type: string
+      enum:
+      - UNK
+      - ORG
+      - INS
+      - WRA
+      - RAC
+      - RAL
+      - CUP
+      - TPA
+      - PCR
+      - TXT
+      - SHG
+      - PRF
+    MerchantsByDateResponseModel:
+      type: object
+      description: TSR Merchants By Date response model
+      properties:
+        data:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/BaseResponseModel'
+            - type: object
+              properties:
+                date:
+                  type: string
+                merchantGroupId:
+                  type: integer
+                  format: int64
+                merchantGroupName:
+                  type: string
+        totals:
+          type: object
+          properties:
+            revenueTotal:
+              type: number
+            clicksTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+            conversionRateTotal:
+              type: number
+            epcTotal:
+              type: number
+            merchantGroupIdsTotal:
+              type: number
+            merchantGroupNameTotal:
+              type: number
+    NetworkResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/BaseResponseModel'
+            - type: object
+              properties:
+                networkName:
+                  type: string
+        totals:
+          properties:
+            networkNameTotal:
+              type: number
+            revenueTotal:
+              type: number
+            clicksTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+            conversionRateTotal:
+              type: number
+            epcTotal:
+              type: number
+    MerchandiseResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              productName:
+                type: string
+              merchantGroupName:
+                type: string
+              merchantGroupId:
+                type: integer
+                format: int64
+              revenue:
+                type: number
+              sales:
+                type: number
+              actions:
+                type: number
+        totals:
+          type: object
+          properties:
+            productNameTotal:
+              type: number
+            merchantGroupNameTotal:
+              type: number
+            merchantGroupIdsTotal:
+              type: number
+            revenueTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+    TransactionsResponseModel:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionModel'
+    LinkUtmInfoModel:
+      type: object
+      properties:
+        utmSource:
+          type: string
+        utmMedium:
+          type: string
+        utmCampaign:
+          type: string
+        utmTerm:
+          type: string
+        utmContent:
+          type: string
+    CuidsResponseModel:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/BaseResponseModel'
+            - type: object
+              properties:
+                cuid:
+                  type: string
+        totals:
+          type: object
+          properties:
+            cuidsTotal:
+              type: number
+            revenueTotal:
+              type: number
+            clicksTotal:
+              type: number
+            salesTotal:
+              type: number
+            actionsTotal:
+              type: number
+            conversionRateTotal:
+              type: number
+            epcTotal:
+              type: number
+    DeviceTypeModel:
+      type: string
+      enum:
+      - DSK
+      - MBL
+      - TBL
+      - UKN
     TransactionModel:
       type: object
       properties:
@@ -1226,6 +1430,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProductModel'
+    PageUtmInfoModel:
+      type: object
+      properties:
+        utmSource:
+          type: string
+        utmMedium:
+          type: string
+        utmCampaign:
+          type: string
+        utmTerm:
+          type: string
+        utmContent:
+          type: string
     ProductModel:
       type: object
       properties:
@@ -1240,22 +1457,9 @@ components:
         quantity:
           type: number
           example: 10
-    PageUtmInfoModel:
+    MerchantsResponseModel:
       type: object
-      properties:
-        utmSource:
-          type: string
-        utmMedium:
-          type: string
-        utmCampaign:
-          type: string
-        utmTerm:
-          type: string
-        utmContent:
-          type: string
-    MerchantsByDateResponseModel:
-      type: object
-      description: TSR Merchants By Date response model
+      description: TSR Merchants response model
       properties:
         data:
           type: array
@@ -1264,8 +1468,6 @@ components:
             - $ref: '#/components/schemas/BaseResponseModel'
             - type: object
               properties:
-                date:
-                  type: string
                 merchantGroupId:
                   type: integer
                   format: int64
@@ -1329,208 +1531,6 @@ components:
               type: number
             pageviewsTotal:
               type: number
-    MerchandiseResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              productName:
-                type: string
-              merchantGroupName:
-                type: string
-              merchantGroupId:
-                type: integer
-                format: int64
-              revenue:
-                type: number
-              sales:
-                type: number
-              actions:
-                type: number
-        totals:
-          type: object
-          properties:
-            productNameTotal:
-              type: number
-            merchantGroupNameTotal:
-              type: number
-            merchantGroupIdsTotal:
-              type: number
-            revenueTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-    SovrnProductModel:
-      type: string
-      enum:
-      - UNK
-      - ORG
-      - INS
-      - WRA
-      - RAC
-      - RAL
-      - CUP
-      - TPA
-      - PCR
-      - TXT
-      - SHG
-      - PRF
-    CuidsResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/BaseResponseModel'
-            - type: object
-              properties:
-                cuid:
-                  type: string
-        totals:
-          type: object
-          properties:
-            cuidsTotal:
-              type: number
-            revenueTotal:
-              type: number
-            clicksTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-            conversionRateTotal:
-              type: number
-            epcTotal:
-              type: number
-    MerchantsResponseModel:
-      type: object
-      description: TSR Merchants response model
-      properties:
-        data:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/BaseResponseModel'
-            - type: object
-              properties:
-                merchantGroupId:
-                  type: integer
-                  format: int64
-                merchantGroupName:
-                  type: string
-        totals:
-          type: object
-          properties:
-            revenueTotal:
-              type: number
-            clicksTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-            conversionRateTotal:
-              type: number
-            epcTotal:
-              type: number
-            merchantGroupIdsTotal:
-              type: number
-            merchantGroupNameTotal:
-              type: number
-    DeviceTypeModel:
-      type: string
-      enum:
-      - DSK
-      - MBL
-      - TBL
-      - UKN
-    NetworkResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/BaseResponseModel'
-            - type: object
-              properties:
-                networkName:
-                  type: string
-        totals:
-          properties:
-            networkNameTotal:
-              type: number
-            revenueTotal:
-              type: number
-            clicksTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-            conversionRateTotal:
-              type: number
-            epcTotal:
-              type: number
-    LinksResponseModel:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/BaseResponseModel'
-            - type: object
-              properties:
-                linkUrl:
-                  type: string
-                linkText:
-                  type: string
-        totals:
-          properties:
-            linkUrlTotal:
-              type: number
-            linkTextTotal:
-              type: number
-            revenueTotal:
-              type: number
-            clicksTotal:
-              type: number
-            salesTotal:
-              type: number
-            actionsTotal:
-              type: number
-            conversionRateTotal:
-              type: number
-            epcTotal:
-              type: number
-    LinkUtmInfoModel:
-      type: object
-      properties:
-        utmSource:
-          type: string
-        utmMedium:
-          type: string
-        utmCampaign:
-          type: string
-        utmTerm:
-          type: string
-        utmContent:
-          type: string
-    TransactionsResponseModel:
-      type: object
-      properties:
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionModel'
   securitySchemes:
     bearerAuth:
       type: apiKey

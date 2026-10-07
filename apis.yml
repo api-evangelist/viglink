@@ -270,6 +270,8 @@ apis:
   - type: Documentation
     url: https://developer.sovrn.com/reference/product-affiliate-api
 common:
+- type: Pricing
+  url: https://knowledge.sovrn.com/kb/payments-in-commerce
 - url: https://www.sovrn.com/feed/
   type: BlogRSS
 - type: VulnerabilityDisclosure

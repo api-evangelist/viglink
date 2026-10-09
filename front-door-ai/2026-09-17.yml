@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: sovrn.com
   final_host: www.sovrn.com
-  ownership: inherited
+  ownership: own
   owner: viglink
   shares_host_with: null
-  inherited_from: www.sovrn.com
+  inherited_from: null
+  alias_of: www.sovrn.com
   verdict: silent
-  score: null
+  score: 0
+  band: 1
+  band_label: silent
   host_score: 0
-  density: null
+  density: 0.0
   words: 1763
   tiers:
     agentic: 0

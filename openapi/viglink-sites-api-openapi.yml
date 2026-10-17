@@ -46,26 +46,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    Sid:
-      name: sid
-      in: query
-      required: false
-      description: 'Custom source ID to be used for tracking purposes. This will be the sovrn CUID.
-
-        Can contain only letters, digits, and the following punctuation characters: ''-'',''_'',''.'',''~''.
-
-        Cannot be longer than 32 characters.
-
-        '
-      schema:
-        type: string
-    Market:
-      name: market
-      in: path
-      required: true
-      description: "The market where to perform the search. Read the market section for the list of supported markets.\nFor example: 'usd_en' for the US market. \n"
-      schema:
-        type: string
     SiteApiKey:
       name: site-api-key
       in: path
@@ -73,26 +53,6 @@ components:
       description: The unique identifier of the publishers site.
       schema:
         type: string
-    OptionalSearchKeywords:
-      name: search-keywords
-      in: query
-      required: false
-      description: 'List of keywords to search in the product name, **separated by space**.
-
-        For example: ''Dickies hat red'' or ''iPhone X''.
-
-        '
-      schema:
-        type: string
-    EpcSort:
-      name: epc-sort
-      in: query
-      required: false
-      description: 'Sort results by EPC. If true the results will be sorted by EPC otherwise default sorting will be used.
-
-        '
-      schema:
-        type: boolean
     Limit:
       name: limit
       in: query
@@ -104,6 +64,22 @@ components:
         '
       schema:
         type: integer
+    OptionalBarcode:
+      name: barcode
+      in: query
+      required: false
+      description: 'The barcode of the product to search, can be one of: UPC,EAN,GTIN,ISBN,ASIN.'
+      schema:
+        type: string
+    EpcSort:
+      name: epc-sort
+      in: query
+      required: false
+      description: 'Sort results by EPC. If true the results will be sorted by EPC otherwise default sorting will be used.
+
+        '
+      schema:
+        type: boolean
     PriceRange:
       name: price-range
       in: query
@@ -119,11 +95,46 @@ components:
         '
       schema:
         type: string
-    OptionalBarcode:
-      name: barcode
+    OptionalPlainlink:
+      name: plainlink
       in: query
       required: false
-      description: 'The barcode of the product to search, can be one of: UPC,EAN,GTIN,ISBN,ASIN.'
+      description: 'The link of the product web page in a merchant''s site.
+
+        **Note**: the link must be plain, if you provide a tracked link the service may not work.
+
+        '
+      schema:
+        type: string
+    Market:
+      name: market
+      in: path
+      required: true
+      description: "The market where to perform the search. Read the market section for the list of supported markets.\nFor example: 'usd_en' for the US market. \n"
+      schema:
+        type: string
+    OptionalSearchKeywords:
+      name: search-keywords
+      in: query
+      required: false
+      description: 'List of keywords to search in the product name, **separated by space**.
+
+        For example: ''Dickies hat red'' or ''iPhone X''.
+
+        '
+      schema:
+        type: string
+    Sid:
+      name: sid
+      in: query
+      required: false
+      description: 'Custom source ID to be used for tracking purposes. This will be the sovrn CUID.
+
+        Can contain only letters, digits, and the following punctuation characters: ''-'',''_'',''.'',''~''.
+
+        Cannot be longer than 32 characters.
+
+        '
       schema:
         type: string
     ExcludeKeywords:
@@ -139,40 +150,7 @@ components:
         '
       schema:
         type: string
-    OptionalPlainlink:
-      name: plainlink
-      in: query
-      required: false
-      description: 'The link of the product web page in a merchant''s site.
-
-        **Note**: the link must be plain, if you provide a tracked link the service may not work.
-
-        '
-      schema:
-        type: string
-  responses:
-    BadRequest:
-      description: A Bad Request status code will be returned if provided parameters are malformed.
-      content:
-        '*/*':
-          schema:
-            $ref: '#/components/schemas/Error'
-    Error:
-      description: For any unexpected error a status code 500 will be returned.
-      content:
-        '*/*':
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      title: Error
-      properties:
-        message:
-          type: string
-          description: The error message
-      example:
-        message: An error message
     Merchant:
       type: object
       title: Merchant
@@ -194,6 +172,15 @@ components:
         id: 8767
         name: Asda George
         logo: https://cdn.imgwzzmb.net/image/merchant/logo/aw/asda_george_88x31.jpeg
+    Error:
+      type: object
+      title: Error
+      properties:
+        message:
+          type: string
+          description: The error message
+      example:
+        message: An error message
     Product:
       type: object
       title: Product
@@ -261,6 +248,19 @@ components:
         discountRate: 50
         affiliatable: true
         epc: 1.05
+  responses:
+    BadRequest:
+      description: A Bad Request status code will be returned if provided parameters are malformed.
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/Error'
+    Error:
+      description: For any unexpected error a status code 500 will be returned.
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

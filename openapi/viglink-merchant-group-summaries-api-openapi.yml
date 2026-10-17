@@ -214,12 +214,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CPCSummary:
-      type: object
-      properties:
-        calculatedEpc:
-          type: number
-          format: float
     MerchantRateDto:
       type: object
       properties:
@@ -232,6 +226,82 @@ components:
           type: string
         details:
           type: string
+    IOCollectionResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/MerchantGroupSummaryResponse'
+        page:
+          type: integer
+          format: int32
+        perPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+    MerchantGroupSummaryFilterType:
+      type: string
+      enum:
+      - NAME
+      - GROUP_ID
+      - CATEGORY
+      - GEO
+      - PROGRAM_TYPE
+      - DOMAIN
+    MerchantGroupSummaryRequest:
+      type: object
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/MerchantGroupSummaryFilter'
+        page:
+          type: integer
+          minimum: 1
+          default: 1
+        pageSize:
+          type: integer
+          minimum: 1
+          maximum: 2500
+          default: 1000
+      required:
+      - page
+      - pageSize
+    MerchantGroupSummaryFilter:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/MerchantGroupSummaryFilterType'
+        values:
+          type: array
+          items:
+            type: integer
+          description: 'For GROUP_ID: Enter numbers directly (e.g., 384)
+
+            For all other filters: Enter text values - the red highlight can be ignored for non-GROUP_ID filters
+
+            '
+      required:
+      - type
+      - values
+    NetworkSummary:
+      type: object
+      properties:
+        CPA:
+          type: array
+          items:
+            $ref: '#/components/schemas/CPASummary'
+        CPC:
+          $ref: '#/components/schemas/CPCSummary'
+    CPCSummary:
+      type: object
+      properties:
+        calculatedEpc:
+          type: number
+          format: float
     MerchantGroupSummaryResponse:
       type: object
       properties:
@@ -288,76 +358,6 @@ components:
             - UN
         sovrn:
           $ref: '#/components/schemas/NetworkSummary'
-    MerchantGroupSummaryFilter:
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/MerchantGroupSummaryFilterType'
-        values:
-          type: array
-          items:
-            type: integer
-          description: 'For GROUP_ID: Enter numbers directly (e.g., 384)
-
-            For all other filters: Enter text values - the red highlight can be ignored for non-GROUP_ID filters
-
-            '
-      required:
-      - type
-      - values
-    NetworkSummary:
-      type: object
-      properties:
-        CPA:
-          type: array
-          items:
-            $ref: '#/components/schemas/CPASummary'
-        CPC:
-          $ref: '#/components/schemas/CPCSummary'
-    MerchantGroupSummaryFilterType:
-      type: string
-      enum:
-      - NAME
-      - GROUP_ID
-      - CATEGORY
-      - GEO
-      - PROGRAM_TYPE
-      - DOMAIN
-    MerchantGroupSummaryRequest:
-      type: object
-      properties:
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/MerchantGroupSummaryFilter'
-        page:
-          type: integer
-          minimum: 1
-          default: 1
-        pageSize:
-          type: integer
-          minimum: 1
-          maximum: 2500
-          default: 1000
-      required:
-      - page
-      - pageSize
-    IOCollectionResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/MerchantGroupSummaryResponse'
-        page:
-          type: integer
-          format: int32
-        perPage:
-          type: integer
-          format: int32
-        totalItems:
-          type: integer
-          format: int32
     CPASummary:
       type: object
       properties:
